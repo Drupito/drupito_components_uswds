@@ -1,0 +1,37 @@
+{% set classes = [
+  'usa-alert',
+  'usa-alert--' ~ variant,
+  hide_icon ? 'usa-alert--no-icon',
+  slim ? 'usa-alert--slim',
+] %}
+
+{% if variant in ['emergency', 'error', 'warning'] %}
+ {% set alert_role = 'alert' %}
+{% else %}
+  {% set alert_role = 'status' %}
+{% endif %}
+
+<div {{ attributes.addClass(classes).setAttribute('role', alert_role) }}>
+  {% if icon %}
+    <div class="usa-alert__icon">
+      <svg class="usa-icon" aria-hidden="true" role="img">
+        <use xlink:href="{{ icon }}"></use>
+      </svg>
+    </div>
+  {% endif %}
+  <div class="usa-alert__body">
+  {% if heading_text %}
+    <h4 class="usa-alert__heading">{{ heading_text }}</h4>
+  {% endif %}
+    <div class="usa-drupito_body_wrapper">
+      {% block body %}{% endblock %}
+    </div>
+    {#
+    This is the standard markup for text in an alert.
+    Because Drupal typically provides <p> tags, we added custom HTML
+    to this component which targets the direct children of usa-drupito_body_wrapper
+    and styles them the same way the <p class="usa-alert__text"> tag is meant to be styled.
+    <p class="usa-alert__text">{{ paragraph_text }}</p>
+    #}
+  </div>
+</div>

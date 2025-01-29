@@ -1,0 +1,38 @@
+name: Alert
+status: stable
+description: USWDS Alert Component
+libraryOverrides:
+  dependencies:
+    - drupito_components_uswds/uswds
+props:
+  type: object
+  properties:
+    heading_text:
+      type: string
+      title: Heading Text
+      description: Prominent alert heading
+    variant:
+      type: string
+      title: Variant
+      description: Type of alert (emergency, error, info, slim, success, warning)
+      enum:
+        - emergency
+        - error
+        - info
+        - success
+        - warning
+      default: info
+    hide_icon:
+      type: boolean
+      title: No Icon
+      description: If true, display an alert without an icon.
+      default: false
+    slim:
+      type: boolean
+      title: Slim
+      description: If true, display a slimmer version of the alert.
+      default: false
+slots:
+  body:
+    title: Body content
+    description: The alert content. Typically a short paragraph.
