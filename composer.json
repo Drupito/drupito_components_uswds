@@ -1,0 +1,23 @@
+{
+  "name": "drupal/drupito_components_uswds",
+  "description": "USWDS Components implemented as Drupal Single Directory Components",
+  "type": "drupal-module",
+  "keywords": [
+    "Drupal",
+    "USWDS",
+    "Components"
+  ],
+  "homepage": "http://drupal.org/project/drupito_components_uswds",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Ashraf Abed",
+      "homepage": "https://debugacademy.com",
+      "email": "Ashraf.Abed@DebugAcademy.com"
+    }
+  ],
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/drupito_components_uswds",
+    "source": "https://git.drupalcode.org/project/drupito_components_uswds"
+  }
+}

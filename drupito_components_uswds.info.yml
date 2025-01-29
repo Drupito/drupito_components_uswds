@@ -1,0 +1,5 @@
+name: 'Drupito Components USWDS'
+type: module
+description: 'Single Directory Components created from USWDS Library.'
+package: Drupito Themes
+core_version_requirement: ^10 || ^11

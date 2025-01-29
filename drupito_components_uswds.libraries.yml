@@ -1,0 +1,13 @@
+# Custom library for general purposes.
+uswds-init:
+  header: true
+  js:
+    dist/js/uswds-init.min.js: {minified: true}
+  css:
+    base:
+      dist/css/uswds.min.css: {}
+uswds:
+  js:
+    dist/js/uswds.min.js: {minified: true}
+  dependencies:
+    - drupito_components_uswds/uswds-init
