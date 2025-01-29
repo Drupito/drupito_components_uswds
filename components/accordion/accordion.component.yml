@@ -1,0 +1,145 @@
+name: Accordion
+status: stable
+description: USWDS Accordion Component, supports up to 10 items
+libraryOverrides:
+  dependencies:
+    - drupito_components_uswds/uswds
+props:
+  type: object
+  properties:
+    multiselectable:
+      type: boolean
+      title: Multiselectable
+      description: If true, multiple accordion items can be expanded at once.
+      default: false
+    bordered:
+      type: boolean
+      title: Bordered
+      description: If true, expanded accordion items will have a border.
+      default: false
+    item_1_expanded:
+      type: boolean
+      title: Item 1 Expanded
+      description: If true, the accordion item 1 will be expanded by default.
+      default: false
+    item_1_heading_text:
+      type: string
+      title: Accordion item 1 Heading Text
+      description: The heading text for accordion item 1. Users can click on this text to expand or collapse the accordion item.
+      default: ''
+    item_2_expanded:
+      type: boolean
+      title: Item 2 Expanded
+      description: If true, the accordion item 2 will be expanded by default.
+      default: false
+    item_2_heading_text:
+      type: string
+      title: Accordion item 2 Heading Text
+      description: The heading text for accordion item 2. Users can click on this text to expand or collapse the accordion item.
+      default: ''
+    item_3_expanded:
+      type: boolean
+      title: Item 3 Expanded
+      description: If true, the accordion item 3 will be expanded by default.
+      default: false
+    item_3_heading_text:
+      type: string
+      title: Accordion item 3 Heading Text
+      description: The heading text for accordion item 3. Users can click on this text to expand or collapse the accordion item.
+      default: ''
+    item_4_expanded:
+      type: boolean
+      title: Item 4 Expanded
+      description: If true, the accordion item 4 will be expanded by default.
+      default: false
+    item_4_heading_text:
+      type: string
+      title: Accordion item 4 Heading Text
+      description: The heading text for accordion item 4. Users can click on this text to expand or collapse the accordion item.
+      default: ''
+    item_5_expanded:
+      type: boolean
+      title: Item 5 Expanded
+      description: If true, the accordion item 5 will be expanded by default.
+      default: false
+    item_5_heading_text:
+      type: string
+      title: Accordion item 5 Heading Text
+      description: The heading text for accordion item 5. Users can click on this text to expand or collapse the accordion item.
+      default: ''
+    item_6_expanded:
+      type: boolean
+      title: Item 6 Expanded
+      description: If true, the accordion item 6 will be expanded by default.
+      default: false
+    item_6_heading_text:
+      type: string
+      title: Accordion item 6 Heading Text
+      description: The heading text for accordion item 6. Users can click on this text to expand or collapse the accordion item.
+      default: ''
+    item_7_expanded:
+      type: boolean
+      title: Item 7 Expanded
+      description: If true, the accordion item 7 will be expanded by default.
+      default: false
+    item_7_heading_text:
+      type: string
+      title: Accordion item 7 Heading Text
+      description: The heading text for accordion item 7. Users can click on this text to expand or collapse the accordion item.
+      default: ''
+    item_8_expanded:
+      type: boolean
+      title: Item 8 Expanded
+      description: If true, the accordion item 8 will be expanded by default.
+      default: false
+    item_8_heading_text:
+      type: string
+      title: Accordion item 8 Heading Text
+      description: The heading text for accordion item 8. Users can click on this text to expand or collapse the accordion item.
+      default: ''
+    item_9_expanded:
+      type: boolean
+      title: Item 9 Expanded
+      description: If true, the accordion item 9 will be expanded by default.
+      default: false
+    item_9_heading_text:
+      type: string
+      title: Accordion item 9 Heading Text
+      description: The heading text for accordion item 9. Users can click on this text to expand or collapse the accordion item.
+      default: ''
+    item_10_expanded:
+      type: boolean
+      title: Item 10 Expanded
+      description: If true, the accordion item 10 will be expanded by default.
+      default: false
+slots:
+  item_1_content:
+    title: Item 1 expanded content
+    description: The content that will be displayed when accordion item 1 is expanded.
+  item_2_content:
+    title: Item 2 expanded content
+    description: The content that will be displayed when accordion item 2 is expanded.
+  item_3_content:
+    title: Item 3 expanded content
+    description: The content that will be displayed when accordion item 3 is expanded.
+  item_4_content:
+    title: Item 4 expanded content
+    description: The content that will be displayed when accordion item 4 is expanded.
+  item_5_content:
+    title: Item 5 expanded content
+    description: The content that will be displayed when accordion item 5 is expanded.
+  item_6_content:
+    title: Item 6 expanded content
+    description: The content that will be displayed when accordion item 6 is expanded.
+  item_7_content:
+    title: Item 7 expanded content
+    description: The content that will be displayed when accordion item 7 is expanded.
+  item_8_content:
+    title: Item 8 expanded content
+    description: The content that will be displayed when accordion item 8 is expanded.
+  item_9_content:
+    title: Item 9 expanded content
+    description: The content that will be displayed when accordion item 9 is expanded.
+  item_10_content:
+    title: Item 10 expanded content
+    description: The content that will be displayed when accordion item 10 is expanded.

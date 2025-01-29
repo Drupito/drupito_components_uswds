@@ -1,0 +1,197 @@
+{% set classes = [
+  'usa-accordion',
+  multiselectable ? 'usa-accordion--multiselectable',
+  bordered ? 'usa-accordion--bordered',
+] %}
+
+{# To avoid ID conflicts if there are multiple accordions on a page #}
+{% set accordion_unique_id = random(1, 1000) %}
+
+<div {{ attributes.addClass(classes).setAttribute('data-allow-multiple', multiselectable) }}>
+  {#
+    @TODO: Create separate accordion-item twig file or SDC
+    to avoid repeating the same code for each item.
+    
+    Revisit after https://www.drupal.org/project/drupal/issues/3446933 is resolved.
+  #}
+  {% if item_1_heading_text %}
+    {% set item_1_id = 'item_1-' ~ accordion_unique_id %}
+    <h4 class="usa-accordion__heading">
+      <button
+        type="button"
+        class="usa-accordion__button"
+        aria-expanded="{{ item_1_expanded ? 'true' : 'false' }}"
+        aria-controls="{{ item_1_id }}"
+      >
+        {{  item_1_heading_text }}
+      </button>
+    </h4>
+    <div id="{{ item_1_id }}" class="usa-accordion__content usa-prose">
+      {% block item_1_content %}
+        {{ item_1_content }}
+      {% endblock %}
+    </div>
+  {% endif %}
+  {% if item_2_heading_text %}
+    {% set item_2_id = 'item_2-' ~ accordion_unique_id %}
+    <h4 class="usa-accordion__heading">
+      <button
+        type="button"
+        class="usa-accordion__button"
+        aria-expanded="{{ item_2_expanded ? 'true' : 'false' }}"
+        aria-controls="{{ item_2_id }}"
+      >
+        {{  item_2_heading_text }}
+      </button>
+    </h4>
+    <div id="{{ item_2_id }}" class="usa-accordion__content usa-prose">
+      {% block item_2_content %}
+        {{ item_2_content }}
+      {% endblock %}
+    </div>
+  {% endif %}
+  {% if item_3_heading_text %}
+    {% set item_3_id = 'item_3-' ~ accordion_unique_id %}
+    <h4 class="usa-accordion__heading">
+      <button
+        type="button"
+        class="usa-accordion__button"
+        aria-expanded="{{ item_3_expanded ? 'true' : 'false' }}"
+        aria-controls="{{ item_3_id }}"
+      >
+        {{  item_3_heading_text }}
+      </button>
+    </h4>
+    <div id="{{ item_3_id }}" class="usa-accordion__content usa-prose">
+      {% block item_3_content %}
+        {{ item_3_content }}
+      {% endblock %}
+    </div>
+  {% endif %}
+  {% if item_4_heading_text %}
+    {% set item_4_id = 'item_4-' ~ accordion_unique_id %}
+    <h4 class="usa-accordion__heading">
+      <button
+        type="button"
+        class="usa-accordion__button"
+        aria-expanded="{{ item_4_expanded ? 'true' : 'false' }}"
+        aria-controls="{{ item_4_id }}"
+      >
+        {{  item_4_heading_text }}
+      </button>
+    </h4>
+    <div id="{{ item_4_id }}" class="usa-accordion__content usa-prose">
+      {% block item_4_content %}
+        {{ item_4_content }}
+      {% endblock %}
+    </div>
+  {% endif %}
+  {% if item_5_heading_text %}
+    {% set item_5_id = 'item_5-' ~ accordion_unique_id %}
+    <h4 class="usa-accordion__heading">
+      <button
+        type="button"
+        class="usa-accordion__button"
+        aria-expanded="{{ item_5_expanded ? 'true' : 'false' }}"
+        aria-controls="{{ item_5_id }}"
+      >
+        {{  item_5_heading_text }}
+      </button>
+    </h4>
+    <div id="{{ item_5_id }}" class="usa-accordion__content usa-prose">
+      {% block item_5_content %}
+        {{ item_5_content }}
+      {% endblock %}
+    </div>
+  {% endif %}
+  {% if item_6_heading_text %}
+    {% set item_6_id = 'item_6-' ~ accordion_unique_id %}
+    <h4 class="usa-accordion__heading">
+      <button
+        type="button"
+        class="usa-accordion__button"
+        aria-expanded="{{ item_6_expanded ? 'true' : 'false' }}"
+        aria-controls="{{ item_6_id }}"
+      >
+        {{  item_6_heading_text }}
+      </button>
+    </h4>
+    <div id="{{ item_6_id }}" class="usa-accordion__content usa-prose">
+      {% block item_6_content %}
+        {{ item_6_content }}
+      {% endblock %}
+    </div>
+  {% endif %}
+  {% if item_7_heading_text %}
+    {% set item_7_id = 'item_7-' ~ accordion_unique_id %}
+    <h4 class="usa-accordion__heading">
+      <button
+        type="button"
+        class="usa-accordion__button"
+        aria-expanded="{{ item_7_expanded ? 'true' : 'false' }}"
+        aria-controls="{{ item_7_id }}"
+      >
+        {{  item_7_heading_text }}
+      </button>
+    </h4>
+    <div id="{{ item_7_id }}" class="usa-accordion__content usa-prose">
+      {% block item_7_content %}
+        {{ item_7_content }}
+      {% endblock %}
+    </div>
+  {% endif %}
+  {% if item_8_heading_text %}
+    {% set item_8_id = 'item_8-' ~ accordion_unique_id %}
+    <h4 class="usa-accordion__heading">
+      <button
+        type="button"
+        class="usa-accordion__button"
+        aria-expanded="{{ item_8_expanded ? 'true' : 'false' }}"
+        aria-controls="{{ item_8_id }}"
+      >
+        {{  item_8_heading_text }}
+      </button>
+    </h4>
+    <div id="{{ item_8_id }}" class="usa-accordion__content usa-prose">
+      {% block item_8_content %}
+        {{ item_8_content }}
+      {% endblock %}
+    </div>
+  {% endif %}
+  {% if item_9_heading_text %}
+    {% set item_9_id = 'item_9-' ~ accordion_unique_id %}
+    <h4 class="usa-accordion__heading">
+      <button
+        type="button"
+        class="usa-accordion__button"
+        aria-expanded="{{ item_9_expanded ? 'true' : 'false' }}"
+        aria-controls="{{ item_9_id }}"
+      >
+        {{  item_9_heading_text }}
+      </button>
+    </h4>
+    <div id="{{ item_9_id }}" class="usa-accordion__content usa-prose">
+      {% block item_9_content %}
+        {{ item_9_content }}
+      {% endblock %}
+    </div>
+  {% endif %}
+  {% if item_10_heading_text %}
+    {% set item_10_id = 'item_10-' ~ accordion_unique_id %}
+    <h4 class="usa-accordion__heading">
+      <button
+        type="button"
+        class="usa-accordion__button"
+        aria-expanded="{{ item_10_expanded ? 'true' : 'false' }}"
+        aria-controls="{{ item_10_id }}"
+      >
+        {{  item_10_heading_text }}
+      </button>
+    </h4>
+    <div id="{{ item_10_id }}" class="usa-accordion__content usa-prose">
+      {% block item_10_content %}
+        {{ item_10_content }}
+      {% endblock %}
+    </div>
+  {% endif %}
+</div>
