@@ -1,0 +1,64 @@
+name: Banner
+status: stable
+description: USWDS Banner Component
+libraryOverrides:
+  dependencies:
+    - drupito_components_uswds/uswds
+props:
+  type: object
+  properties:
+    variant:
+      type: string
+      title: Variant
+      description: Domain type (e.g., .gov or .mil)
+      enum:
+        - gov
+        - mil
+      default: gov
+
+    aria_label:
+      type: string
+      title: ARIA Label
+      description: Used on the <section> to describe the banner for screen readers
+      default: ""
+
+    hide_icons:
+      type: boolean
+      title: Hide Icons
+      default: false
+
+    header_text:
+      type: string
+      title: Banner Header Text
+      default: ""
+
+    action_text:
+      type: string
+      title: Banner Action Text
+      default: ""
+
+    domain_heading:
+      type: string
+      title: Domain Heading
+      default: "Official websites use .gov"
+
+    domain_body:
+      type: string
+      title: Domain Body
+      default: ""
+
+    secure_heading:
+      type: string
+      title: Secure Heading
+      default: ""
+
+    secure_body:
+      type: string
+      title: Secure Body
+      default: ""
+
+slots:
+  custom_header:
+    title: Custom Header
+  custom_guidance:
+    title: Custom Guidance
