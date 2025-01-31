@@ -7,34 +7,45 @@ libraryOverrides:
 props:
   type: object
   properties:
+    disabled:
+      type: boolean
+      title: disabled
+      description: disabled
+      default: false
+    button_text:
+      type: string
+      title: button_text
+      description: button_text
+      require: true
     state:
       type: string
       title: 'Button state'
       description: 'Button state (hover or active)'
       enum:
-        - active
-        - hover
+        - 'active'
+        - 'hover'
+        - null
     accent:
       type: string
       title: 'Accent'
       description: 'Button accent (warm or cool)'
       enum:
-        - warm
-        - cool
+        - 'warm'
+        - 'cool'
+        - null
     focus:
-      type: string
+      type: boolean
       title: 'Button focused?'
       description: 'Should the button be focused by default?'
-    unstyled:
-      type: boolean
-      title: unstyled
-      Description: Style unstyled
-      default: false
-    secondary:
-      type: boolean
-      title: secondary
-      Description: Style secondary
-      default: false
+    style:
+      type: string
+      title: Button Style
+      Description: The button style
+      enum:
+        - 'unstyled'
+        - 'secondary'
+        - 'base'
+        - null
     outline:
       type: boolean
       title: outline
