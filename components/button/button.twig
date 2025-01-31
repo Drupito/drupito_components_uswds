@@ -1,0 +1,13 @@
+{% set classes = [
+  'usa-button',
+  state ? 'usa-button--' ~ state, {# hover or active #}
+  focus ? 'usa-focus',
+  unstyled ? 'usa-button--unstyled',
+  secondary ? 'usa-button-secondary',
+  accent ? 'usa-button--accent-' ~ accent, {# warm or cool #}
+  outline ? 'usa-button--' ~ outline,
+  big ? 'usa-button--' ~ big,
+  inverse ? 'usa-button--' ~ inverse,
+  ] %}
+
+<button{{ attributes.addClass(classes).setAttribute("type", "button").setAttribute('disabled', disabled ? 'disabled' : false).setAttribute('aria-disabled', disabled) }}>{{ button_text }}</button>
