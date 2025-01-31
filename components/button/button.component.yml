@@ -1,0 +1,63 @@
+name: Button
+status: stable
+description: USWDS Button Component
+libraryOverrides:
+  dependencies:
+    - drupito_components_uswds/uswds
+props:
+  type: object
+  properties:
+    disabled:
+      type: boolean
+      title: disabled
+      description: disabled
+      default: false
+    button_text:
+      type: string
+      title: button_text
+      description: button_text
+      require: true
+    state:
+      type: string
+      title: 'Button state'
+      description: 'Button state (hover or active)'
+      enum:
+        - 'active'
+        - 'hover'
+        - null
+    accent:
+      type: string
+      title: 'Accent'
+      description: 'Button accent (warm or cool)'
+      enum:
+        - 'warm'
+        - 'cool'
+        - null
+    focus:
+      type: boolean
+      title: 'Button focused?'
+      description: 'Should the button be focused by default?'
+    style:
+      type: string
+      title: Button Style
+      Description: The button style
+      enum:
+        - 'unstyled'
+        - 'secondary'
+        - 'base'
+        - null
+    outline:
+      type: boolean
+      title: outline
+      Description: Style outline
+      default: false
+    big:
+      type: boolean
+      title: big
+      Description: Style big
+      default: false
+    inverse:
+      type: boolean
+      title: inverse
+      Description: Style inverse
+      default: false
