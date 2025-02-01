@@ -1,0 +1,14 @@
+{% set classes = [
+  "usa-checkbox__input",
+  tile == "tile" ? "usa-checkbox__input--tile"
+] %}
+
+<div class="usa-checkbox">
+	<input{{attributes.addClass(classes).setAttribute('id',name).setAttribute('type','checkbox').setAttribute('name',name).setAttribute('value',value).setAttribute('checked',checked?'checked':false).setAttribute('disabled',disabled?'disabled':false).setAttribute('aria-disabled',disabled)}}/>
+	<label class="usa-checkbox__label" for="{{ name }}">
+		{{ label }}
+		{% if tile == "tile" %}
+			<span class="usa-checkbox__label-description"> {% block checkbox_tile_text %}{% endblock %}</span>
+		{% endif %}
+	</label>
+</div>
