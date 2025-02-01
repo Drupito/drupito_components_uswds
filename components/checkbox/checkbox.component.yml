@@ -23,6 +23,10 @@ props:
       description: 'Set the checkbox style'
       enum:
         - 'tile'
+    checkbox_tile_text:
+      type: 'string'
+      title: 'Checkbox Tile Text'
+      description: 'Optional additional text displayed inside tile checkboxes'
     name:
       type: 'string'
       title: 'Name'
@@ -40,7 +44,3 @@ props:
       title: 'Checked'
       description: 'Checks if the checkbox is checked'
       default: false
-slots:
-  checkbox_tile_text:
-    title: 'Checkbox Tile Text'
-    description: 'Optional additional text displayed inside tile checkboxes'

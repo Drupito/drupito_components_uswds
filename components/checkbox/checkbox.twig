@@ -8,7 +8,7 @@
 	<label class="usa-checkbox__label" for="{{ name }}">
 		{{ label }}
 		{% if tile == "tile" %}
-			<span class="usa-checkbox__label-description"> {% block checkbox_tile_text %}{% endblock %}</span>
+			<span class="usa-checkbox__label-description">{{ checkbox_tile_text }}</span>
 		{% endif %}
 	</label>
 </div>
