@@ -1,64 +1,53 @@
 name: Banner
 status: stable
-description: USWDS Banner Component
+description: USWDS Government Banner Component
 libraryOverrides:
   dependencies:
     - drupito_components_uswds/uswds
 props:
   type: object
   properties:
-    variant:
+    icon_path_header:
       type: string
-      title: Variant
-      description: Domain type (e.g., .gov or .mil)
-      enum:
-        - gov
-        - mil
-      default: gov
-
-    aria_label:
-      type: string
-      title: ARIA Label
-      description: Used on the <section> to describe the banner for screen readers
-      default: ""
-
-    hide_icons:
-      type: boolean
-      title: Hide Icons
-      default: false
-
+      title: Header Icon Path
+      description: "Enter the URL or path to the header flag icon."
+      default: "https://designsystem.digital.gov/assets/img/us_flag_small.png"
     header_text:
       type: string
-      title: Banner Header Text
-      default: ""
-
+      title: Header Text
+      description: Main banner title text
     action_text:
       type: string
-      title: Banner Action Text
-      default: ""
-
-    domain_heading:
+      title: Action Text
+      description: Text for toggle button
+    icon_path_1:
       type: string
-      title: Domain Heading
-      default: "Official websites use .gov"
-
-    domain_body:
+      title: Section 1 Icon Path
+      description: "Enter the URL or path to the icon for the first guidance section."
+      default: "https://designsystem.digital.gov/assets/img/icon-dot-gov.svg"
+    section1_title:
       type: string
-      title: Domain Body
-      default: ""
-
-    secure_heading:
+      title: Section 1 Title (Bolded)
+      description: Section 1 title
+    section1_content:
       type: string
-      title: Secure Heading
-      default: ""
-
-    secure_body:
+      title: Section 1 Content
+      description: Section 1 content
+    icon_path_2:
       type: string
-      title: Secure Body
-      default: ""
+      title: Section 2 Icon Path
+      description: "Enter the URL or path to the icon for the second guidance section."
+      default: "https://designsystem.digital.gov/assets/img/icon-https.svg"
 
-slots:
-  custom_header:
-    title: Custom Header
-  custom_guidance:
-    title: Custom Guidance
+    section2_title:
+      type: string
+      title: Section 2 Title (Bolded) 
+      description: Section 2 title
+    section2_content:
+      type: string
+      title: Section 2 Content
+      description: Section 2 content
+    
+    
+    
+    
