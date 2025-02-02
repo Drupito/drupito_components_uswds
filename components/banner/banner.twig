@@ -1,64 +1,88 @@
-{% set classes = [
-  'usa-banner'
-] %}
+{% set classes = ['usa-banner'] %}
+{% set instance_id = banner_id ~ random(1000, 9999) %}
+{% set content_id = instance_id ~ '-content' %}
 
-{% set banner_id = 'banner-' ~ variant ~ '-' ~ random() %}
-{% set icon_path = icon_path|default('https://designsystem.digital.gov/assets/img/') %}
-
-<section {{ attributes.addClass(classes).setAttribute('aria-label', aria_label) }}>
-	<div class="usa-accordion">
-		<header class="usa-banner__header">
-			<div class="usa-banner__inner">
-				<div class="grid-col-auto">
-					{% if not hide_icons %}
-						<img aria-hidden="true" class="usa-banner__header-flag" src="{{ icon_path ~ 'us_flag_small.png' }}" alt=""/>
+<section {{ attributes.addClass(classes).setAttribute('aria-label', header_text|striptags) }}>
+  <div class="usa-accordion">
+    <header class="usa-banner__header">
+      <div class="usa-banner__inner">
+        <div class="grid-col-auto">
+          {% if icon_path_header %}
+            <img aria-hidden="true" class="usa-banner__header-flag" src="{{ icon_path_header }}" alt=""/>
+          {% endif %}
+        </div>
+        
+        <div class="grid-col-fill tablet:grid-col-auto" aria-hidden="true">
+          <p class="usa-banner__header-text">
+					{% if header_text %}
+            {{ header_text }}
 					{% endif %}
-				</div>
-				<div class="grid-col-fill tablet:grid-col-auto" aria-hidden="true">
-					{% block custom_header %}
-						<p class="usa-banner__header-text">
-							{{ header_text }}
-						</p>
-						<p class="usa-banner__header-action">
-							{{ action_text }}
-						</p>
-					{% endblock %}
-				</div>
-				<button type="button" class="usa-accordion__button usa-banner__button" aria-expanded="false" aria-controls="{{ banner_id }}">
-					<span class="usa-banner__button-text">
-						{{ action_text }}
-					</span>
-				</button>
-			</div>
-		</header>
-		<div class="usa-banner__content usa-accordion__content" id="{{ banner_id }}">
-			<div class="grid-row grid-gap-lg">
-				{% block custom_guidance %}
-					<div class="usa-banner__guidance tablet:grid-col-6">
-						{% if not hide_icons %}
-							<img class="usa-banner__icon usa-media-block__img" src="{{ icon_path ~ 'icon-dot-' ~ variant ~ '.svg' }}" alt="" aria-hidden="true"/>
-						{% endif %}
-						<div class="usa-media-block__body">
-							<p>
-								<strong>{{ domain_heading }}</strong><br/>
-								{{ domain_body|raw }}
-							</p>
-						</div>
-					</div>
-					<div class="usa-banner__guidance tablet:grid-col-6">
-						{% if not hide_icons %}
-							<img class="usa-banner__icon usa-media-block__img" src="{{ icon_path ~ 'icon-https.svg' }}" alt="" aria-hidden="true"/>
-						{% endif %}
-						<div class="usa-media-block__body">
-							<p>
-								<strong>{{ secure_heading }}</strong><br/>
-								{{ secure_body|raw }}
-							</p>
-						</div>
-					</div>
-				{% endblock %}
-			</div>
-		</div>
-	</div>
-</section>
+          </p>
+          <p class="usa-banner__header-action">
+					{% if action_text %}
+            {{ action_text }}
+					{% endif %}
+          </p>
+        </div>
 
+        <button class="usa-accordion__button usa-banner__button"
+								
+								aria-expanded="false"
+                aria-controls="{{ content_id }}">
+          <span class="usa-banner__button-text">
+					{% if action_text %}
+           {{ action_text }}
+					{% endif %}
+          </span>
+        </button>
+      </div>
+    </header>
+
+   
+      
+
+      <div class="usa-banner__content usa-accordion__content" id="{{ content_id }}" >
+	
+    
+      <div class="grid-row grid-gap-lg">
+        {# Section 1 #}
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          {% if icon_path_1 %}
+            <img class="usa-banner__icon usa-media-block__img" src="{{ icon_path_1 }}" alt="" aria-hidden="true"/>
+          {% endif %}
+          <div class="usa-media-block__body">
+            <p>
+              {% if section1_title %}
+                <strong>{{ section1_title }}</strong>{% endif %}<br>
+              
+							{% if section1_content %}
+             	 {{ section1_content }}
+							{% endif %}
+            </p>
+          </div>
+        </div>
+
+        {# Section 2 #}
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          {% if icon_path_2 %}
+            <img class="usa-banner__icon usa-media-block__img" 
+                 src="{{ icon_path_2 }}" 
+                 alt=""
+                 aria-hidden="true"/>
+          {% endif %}
+          <div class="usa-media-block__body">
+            <p>
+              {% if section2_title %}
+                <strong>{{ section2_title }}</strong>
+							{% endif %}<br>
+              
+							{% if section2_content %}
+              	{{ section2_content }}
+							{% endif %}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
