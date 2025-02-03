@@ -1,0 +1,82 @@
+name: Button Group
+status: stable
+description: USWDS Button Group Component – renders a group of buttons (or links) using USWDS styles.
+libraryOverrides:
+  dependencies:
+    - drupito_components_uswds/uswds
+props:
+  type: object
+  properties:
+    segmented:
+      type: boolean
+      title: Segmented
+      description: If true, renders the group with segmented styling.
+      default: false
+    items:
+      type: array
+      title: Button Group Items
+      description: A list of buttons.
+      items:
+        type: object
+        properties:
+          button_text:
+            type: string
+            title: Button Text
+            description: The text to display on the button.
+          disabled:
+            type: boolean
+            title: Disabled
+            description: If true, the button is disabled.
+            default: false
+          state:
+            type: string
+            title: Button State
+            description: Button state (hover or active).
+            enum:
+              - active
+              - hover
+              - null
+          accent:
+            type: string
+            title: Accent
+            description: Button accent (warm or cool).
+            enum:
+              - warm
+              - cool
+              - null
+          focus:
+            type: boolean
+            title: Focused
+            description: If true, the button is focused.
+            default: false
+          style:
+            type: string
+            title: Button Style
+            description: The button style.
+            enum:
+              - unstyled
+              - secondary
+              - base
+              - null
+          outline:
+            type: boolean
+            title: Outline
+            description: If true, the button is styled as an outline button.
+            default: false
+          big:
+            type: boolean
+            title: Big
+            description: If true, the button is styled as a big button.
+            default: false
+          inverse:
+            type: boolean
+            title: Inverse
+            description: If true, the button is styled as an inverse button.
+            default: false
+          url:
+            type: string
+            title: URL
+            description: Optional URL. If provided, the button will be rendered as a link.
+            default: ''
+        required:
+          - button_text
