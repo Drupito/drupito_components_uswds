@@ -1,0 +1,56 @@
+{#
+  Props:
+    - header_text: Optional card header text.
+    - media_image: Optional image URL.
+    - media_alt: Alternative text for the image.
+    - body_text: Main card content.
+    - footer_text: Text for the footer button.
+    - footer_url: If provided, renders the footer as a link.
+    - layout: Determines the card layout. Options are:
+        • default (regular card)
+        • header_first (header comes before media)
+        • inset_media (media is indented)
+        • exdent_media (media extends to the card edge)
+        • flag (flag layout, horizontal orientation)
+    - flag_media_position: (Only for flag layout) "left" (default) or "right" (adds a modifier).
+#}
+
+{% set li_classes = ['usa-card'] %}
+{% if layout == 'flag' %}
+	{% set li_classes = li_classes|merge(['usa-card--flag']) %}
+	{% if flag_media_position == 'right' %}
+		{% set li_classes = li_classes|merge(['usa-card--media-right']) %}
+	{% endif %}
+{% elseif layout == 'header_first' %}
+	{% set li_classes = li_classes|merge(['usa-card--header-first']) %}
+{% endif %}
+
+<li class="{{ li_classes|join(' ') }}">
+	<div class="usa-card__container">
+		{% if header_text %}
+			<div class="usa-card__header">
+				<h4 class="usa-card__heading">{{ header_text }}</h4>
+			</div>
+		{% endif %}
+		{% if media_image %}
+			<div class="usa-card__media {% if layout == 'inset_media' %}usa-card__media--inset{% elseif layout == 'exdent_media' %}usa-card__media--exdent{% endif %}">
+				<div class="usa-card__img">
+					<img src="{{ media_image }}" alt="{{ media_alt }}">
+				</div>
+			</div>
+		{% endif %}
+		<div class="usa-card__body">
+			{{ body_text|raw }}
+		</div>
+		{% if footer_text %}
+			<div class="usa-card__footer">
+				{% if footer_url %}
+					<a href="{{ footer_url }}" class="usa-button">{{ footer_text }}</a>
+				{% else %}
+					<button type="button" class="usa-button">{{ footer_text }}</button>
+				{% endif %}
+			</div>
+		{% endif %}
+	</div>
+</li>
+
