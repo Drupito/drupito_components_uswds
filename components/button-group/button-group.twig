@@ -1,0 +1,48 @@
+{#
+  Props:
+    - segmented: boolean – if true, adds the usa-button-group--segmented class.
+    - items: an array of items, each with:
+        - button_text (string, required)
+        - disabled (boolean)
+        - state (string: active or hover)
+        - accent (string: warm or cool)
+        - focus (boolean)
+        - style (string: unstyled, secondary, base)
+        - outline (boolean)
+        - big (boolean)
+        - inverse (boolean)
+        - url (string; if provided the item is rendered as an <a> tag)
+#}
+
+{% set group_classes = ['usa-button-group'] %}
+{% if segmented %}
+	{% set group_classes = group_classes|merge(['usa-button-group--segmented']) %}
+{% endif %}
+
+<ul class="{{ group_classes|join(' ') }}">
+	{% for item in items %}
+		<li class="usa-button-group__item">
+
+			{% set classes = [
+        'usa-button',
+        item.state ? 'usa-button--' ~ item.state,
+        item.focus ? 'usa-focus',
+        item.style and item.style != 'null' ? 'usa-button--' ~ item.style,
+        item.accent and item.accent != 'null' ? 'usa-button--accent-' ~ item.accent,
+        item.outline ? 'usa-button--outline',
+        item.big ? 'usa-button--big',
+        item.inverse ? 'usa-button--inverse'
+      ]|join(' ') %}
+
+			{% if item.url %}
+				<a href="{{ item.url }}" class="{{ classes|join(' ') }}" {% if item.disabled %} disabled="disabled" aria-disabled="true" {% endif %}>
+					{{ item.button_text }}
+				</a>
+			{% else %}
+				<button type="button" class="{{ classes|join(' ') }}" {{ item.disabled ? 'disabled="disabled" aria-disabled="true"' }}>
+					{{ item.button_text }}
+				</button>
+			{% endif %}
+		</li>
+	{% endfor %}
+</ul>
