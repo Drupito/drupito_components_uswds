@@ -15,25 +15,36 @@
     - flag_media_position: (Only for flag layout) "left" (default) or "right" (adds a modifier).
 #}
 
-{% set li_classes = ['usa-card'] %}
-{% if layout == 'flag' %}
-	{% set li_classes = li_classes|merge(['usa-card--flag']) %}
-	{% if flag_media_position == 'right' %}
-		{% set li_classes = li_classes|merge(['usa-card--media-right']) %}
-	{% endif %}
-{% elseif layout == 'header_first' %}
-	{% set li_classes = li_classes|merge(['usa-card--header-first']) %}
-{% endif %}
+{% set layout_classes = ['usa-card'] %}
 
-<li class="{{ li_classes|join(' ') }}">
-	<div class="usa-card__container">
+
+{% if layout == 'flag' %}
+{% set layout_classes = layout_classes|merge(['usa-card--flag']) %}
+
+
+{% elseif layout == 'header_first' %}
+{% set layout_classes = layout_classes|merge(['usa-card--header-first']) %}{% elseif layout == 'inset_media' %}
+{% set layout_classes = layout_classes|merge(['usa-card__media--inset']) %}{% elseif layout == 'exdent_media' %}
+{% set layout_classes = layout_classes|merge(['usa-card__media--exdent']) %}
+
+
+{% endif %}
+{% set unique_id = 'card-' ~ loop.index %}
+
+
+<li class="{{ layout_classes|join(' ') }}">
+	<div id="{{ unique_id }}" class="usa-card__container">
+
+
 		{% if header_text %}
 			<div class="usa-card__header">
 				<h4 class="usa-card__heading">{{ header_text }}</h4>
 			</div>
 		{% endif %}
-		{% if media_image %}
-			<div class="usa-card__media {% if layout == 'inset_media' %}usa-card__media--inset{% elseif layout == 'exdent_media' %}usa-card__media--exdent{% endif %}">
+{% if has_media %}
+	<div class="usa-card__media">
+
+
 				<div class="usa-card__img">
 					<img src="{{ media_image }}" alt="{{ media_alt }}">
 				</div>
@@ -44,7 +55,9 @@
 		</div>
 		{% if footer_text %}
 			<div class="usa-card__footer">
-				{% if footer_url %}
+{% if footer_type == 'link' and footer_url %}
+
+
 					<a href="{{ footer_url }}" class="usa-button">{{ footer_text }}</a>
 				{% else %}
 					<button type="button" class="usa-button">{{ footer_text }}</button>
