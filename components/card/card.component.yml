@@ -10,8 +10,13 @@ props:
     header_text:
       type: string
       title: Header Text
-      description: The title of the card.
+      description: The title to display at the top of the card.
       default: ''
+    has_media:
+      type: boolean
+      title: Include Media?
+      description: If checked, include image.
+      default: false
     media_image:
       type: string
       title: Media Image URL
@@ -25,7 +30,7 @@ props:
     body_text:
       type: string
       title: Body Content
-      description: The body content of the card.
+      description: The main content of the card. (You can use HTML if needed.)
       default: ''
     footer_text:
       type: string
@@ -35,12 +40,20 @@ props:
     footer_url:
       type: string
       title: Footer URL
-      description: The URL for the footer link.
+      description: The URL for the footer link. If not provided, a button will be rendered.
       default: ''
+    footer_type:
+      type: string
+      title: Footer Type
+      description: Choose between a button or a link.
+      enum:
+        - link
+        - button
+      default: link
     layout:
       type: string
       title: Card Layout
-      description: Layout options for the card.
+      description: Select a layout for the card.
       enum:
         - default
         - header_first
