@@ -1,0 +1,46 @@
+{#
+  Drupito USWDS Breadcrumb Component
+  
+  Props from the YAML:
+    - variant (default|wrap|rdfa)
+    - aria_label (string)
+    - items (array of { label, url, current })
+#}
+
+{% set nav_classes = [
+  'usa-breadcrumb',
+  variant == 'wrap' ? 'usa-breadcrumb--wrap'
+]|join(' ') %}
+
+<nav
+	class="{{ nav_classes }}" aria-label="{{ aria_label|default('Breadcrumbs') }}">
+	{# For the RDFa variant, add the vocab/typeof attributes on <ol> #}
+	<ol class="usa-breadcrumb__list" {% if variant == 'rdfa' %} vocab="http://schema.org/" typeof="BreadcrumbList" {% endif %}>
+		{% for item in items %}
+			{# Build the <li> element classes and attributes #}
+			{% set li_classes = [
+        'usa-breadcrumb__list-item',
+        item.current ? 'usa-current'
+      ]|join(' ') %}
+
+			<li
+				class="{{ li_classes }}" {% if variant == 'rdfa' %} property="itemListElement" typeof="ListItem" {% endif %} {% if item.current %} aria-current="page" {% endif %}>
+				{# If it's not current, wrap with <a>. If it is current, just <span>. #}
+				{% if not item.current %}
+					<a href="{{ item.url }}" class="usa-breadcrumb__link" {% if variant == 'rdfa' %} property="item" typeof="WebPage" {% endif %}>
+						<span {% if variant == 'rdfa' %} property="name" {% endif %}>{{ item.label }}</span>
+					</a>
+					{% if variant == 'rdfa' %}
+						<meta property="position" content="{{ loop.index }}"/>
+					{% endif %}
+				{% else %}
+					<span {% if variant == 'rdfa' %} property="name" {% endif %}>{{ item.label }}</span>
+					{% if variant == 'rdfa' %}
+						<meta property="position" content="{{ loop.index }}"/>
+					{% endif %}
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ol>
+</nav>
+
