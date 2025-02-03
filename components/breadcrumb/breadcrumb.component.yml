@@ -1,0 +1,49 @@
+name: Breadcrumb
+status: stable
+description: USWDS Breadcrumb Component
+libraryOverrides:
+  dependencies:
+    - drupito_components_uswds/uswds
+
+props:
+  type: object
+  properties:
+    variant:
+      type: string
+      title: Variant
+      description: Type of breadcrumb variant
+      enum:
+        - default
+        - wrap
+        - rdfa
+      default: default
+
+    aria_label:
+      type: string
+      title: 'ARIA label'
+      description: 'Label for the <nav> element'
+      default: 'Breadcrumbs'
+
+    items:
+      type: array
+      title: Breadcrumb Items
+      description: >
+        An array of breadcrumb items. Each item can be marked as current or given a URL.
+      items:
+        type: object
+        properties:
+          label:
+            type: string
+            title: Label
+            description: The visible text for the breadcrumb link or span.
+            default: ''
+          url:
+            type: string
+            title: URL
+            description: The link href for this breadcrumb item (if not current).
+            default: ''
+          current:
+            type: boolean
+            title: Current page?
+            description: Whether this item represents the current page.
+            default: false
