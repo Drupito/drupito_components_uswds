@@ -1,0 +1,58 @@
+name: Card
+status: stable
+description: USWDS Card Component
+libraryOverrides:
+  dependencies:
+    - drupito_components_uswds/uswds
+props:
+  type: object
+  properties:
+    header_text:
+      type: string
+      title: Header Text
+      description: The title of the card.
+      default: ''
+    media_image:
+      type: string
+      title: Media Image URL
+      description: The URL of an image to display (optional).
+      default: ''
+    media_alt:
+      type: string
+      title: Media Alt Text
+      description: The alternative text for the image.
+      default: ''
+    body_text:
+      type: string
+      title: Body Content
+      description: The body content of the card.
+      default: ''
+    footer_text:
+      type: string
+      title: Footer Button Text
+      description: The text for the call-to-action button in the footer.
+      default: ''
+    footer_url:
+      type: string
+      title: Footer URL
+      description: The URL for the footer link.
+      default: ''
+    layout:
+      type: string
+      title: Card Layout
+      description: Layout options for the card.
+      enum:
+        - default
+        - header_first
+        - inset_media
+        - exdent_media
+        - flag
+      default: default
+    flag_media_position:
+      type: string
+      title: Flag Media Position
+      description: (Only for flag layout) Choose whether the media appears on the left or right.
+      enum:
+        - left
+        - right
+      default: left
