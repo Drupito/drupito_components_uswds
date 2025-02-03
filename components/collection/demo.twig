@@ -1,0 +1,42 @@
+How to re-create the USWDS tests with this component:
+
+{# Default Collection #}
+{% embed "drupito_components_uswds:collection" with { 
+    author_name: 'By Sondra Ainsworth and Constance Lu',
+    published_date: 'September 30, 2020',
+    tag_text: "NEW",
+    is_new: true,
+} only %}
+	{% block heading_link %}{% endblock %}
+	{% block body %}{% endblock %}
+{% endembed %}
+
+{# Media Thumbnail Collection #}
+{% embed "drupito_components_uswds:collection" with { 
+    media_image_url: 'https://trumpadministration.archives.performance.gov/img/GoG/GoG-logo.png',
+    author_name: 'By Sondra Ainsworth and Constance Lu',
+    published_date: 'September 30, 2020',
+    tag_text: "NEW",
+    is_new: true,
+} only %}
+	{% block heading_link %}{% endblock %}
+	{% block body %}{% endblock %}
+{% endembed %}
+
+{# Calender Display Collection #}
+{% embed "drupito_components_uswds:collection" with { 
+    calendar_month: 'SEP',
+    calendar_day: '30',
+} only %}
+	{% block heading_link %}{% endblock %}
+	{% block body %}{% endblock %}
+{% endembed %}
+
+{# Headings Only Collection #}
+{% embed "drupito_components_uswds:collection" with { 
+    is_condensed: true,
+    icon: '/assets/img/sprite.svg#public',
+    icon_text: 'Performance.gov'
+} only %}
+	{% block heading_link %}{% endblock %}
+{% endembed %}
