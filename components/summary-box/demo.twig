@@ -1,0 +1,26 @@
+<h2>Test Summary box</h2>
+
+{% embed "drupito_components_uswds:summary-box" with 
+{ heading: "Key information" } only %}
+	{% block item_1 %}
+		If you are under a winter storm warning,
+		<a href="#">find shelter</a>
+		right away.
+	{% endblock %}
+	{% block item_2 %}
+		Sign up for your community's warning system.
+	{% endblock %}
+	{% block item_3 %}
+		Prepare an emergency kit with essentials.
+	{% endblock %}
+	{% block item_4 %}
+		Charge your
+		<a href="#">devices</a>.
+	{% endblock %}
+	{% block item_5 %}
+		Keep your
+		<a href="#">car emergency kit</a>
+		stocked.
+	{% endblock %}
+{% endembed %}
+
