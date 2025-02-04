@@ -1,0 +1,179 @@
+<h1>Card Component Test</h1>
+
+<h3 class="site-preview-heading">Default Card</h3>
+<ul class="usa-card-group">
+	{% embed "drupito_components_uswds:card" with {
+    header_text: "Default Card",
+    footer_text: "Visit Florida Keys",
+    footer_url: "#"
+  } only %}
+		{% block body %}
+			<p>Lorem ipsum dolor sit amet,
+				<strong>consectetur</strong>
+				adipisicing elit.</p>
+		{% endblock %}
+	{% endembed %}
+</ul>
+
+<h3 class="site-preview-heading">Default Card (Header Above)</h3>
+<ul class="usa-card-group">
+	{% embed "drupito_components_uswds:card" with {
+    header_text: "Default Card (Header Above)",
+    footer_text: "Visit Florida Keys",
+    footer_url: "#",
+    header_above: true
+  } only %}
+		{% block body %}
+			<p>This is a default card with the
+				<strong>header above</strong>.</p>
+		{% endblock %}
+	{% endembed %}
+</ul>
+
+<h3 class="site-preview-heading">Card with Media</h3>
+<ul class="usa-card-group">
+	{% embed "drupito_components_uswds:card" with {
+    header_text: "Card with Media",
+    has_media: true,
+    media_image: "https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg",
+    media_alt: "A placeholder image",
+    footer_text: "Visit Florida Keys",
+    footer_url: "#"
+  } only %}
+		{% block body %}
+			<p>This is a
+				<strong>card</strong>
+				with an image.</p>
+		{% endblock %}
+	{% endembed %}
+</ul>
+
+<h3 class="site-preview-heading">Card with Media (Header Above)</h3>
+<ul class="usa-card-group">
+	{% embed "drupito_components_uswds:card" with {
+    header_text: "Card with Media",
+    has_media: true,
+    media_image: "https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg",
+    media_alt: "A placeholder image",
+    footer_text: "Visit Florida Keys",
+    footer_url: "#",
+    header_above: true
+  } only %}
+		{% block body %}
+			<p>This is a
+				<strong>card</strong>
+				with an image and the header
+				<strong>above</strong>.</p>
+		{% endblock %}
+	{% endembed %}
+</ul>
+
+<h3 class="site-preview-heading">Exdent Media</h3>
+<ul class="usa-card-group">
+	{% embed "drupito_components_uswds:card" with {
+    header_text: "Exdent Media",
+    has_media: true,
+    layout: "exdent_media",
+    media_image: "https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg",
+    media_alt: "A placeholder image",
+    footer_text: "Visit Florida Keys",
+    footer_url: "#"
+  } only %}
+		{% block body %}
+			<p>This card has
+				<strong>media extending over the edge</strong>.</p>
+		{% endblock %}
+	{% endembed %}
+</ul>
+
+<h3 class="site-preview-heading">Inset Media</h3>
+<ul class="usa-card-group">
+	{% embed "drupito_components_uswds:card" with {
+    header_text: "Inset Media",
+    has_media: true,
+    layout: "inset_media",
+    media_image: "https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg",
+    media_alt: "A placeholder image",
+    footer_text: "Visit Florida Keys",
+    footer_url: "#"
+  } only %}
+		{% block body %}
+			<p>This card has
+				<strong>indented media</strong>.</p>
+		{% endblock %}
+	{% endembed %}
+</ul>
+
+<h3 class="site-preview-heading">Header-First Layout</h3>
+<ul class="usa-card-group">
+	{% embed "drupito_components_uswds:card" with {
+    header_text: "Header-First Layout",
+    has_media: true,
+    layout: "header_first",
+    media_image: "https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg",
+    media_alt: "A placeholder image",
+    footer_text: "Visit Florida Keys",
+    footer_url: "#"
+  } only %}
+		{% block body %}
+			<p>This card has the
+				<strong>header before the media</strong>.</p>
+		{% endblock %}
+	{% endembed %}
+</ul>
+
+<h3 class="site-preview-heading">Flag Layout Card</h3>
+<ul class="usa-card-group">
+	{% embed "drupito_components_uswds:card" with {
+    header_text: "Flag Layout",
+    has_media: true,
+    layout: "flag",
+    media_image: "https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg",
+    media_alt: "A placeholder image",
+    footer_text: "Visit Florida Keys",
+    footer_url: "#"
+  } only %}
+		{% block body %}
+			<p>This
+				<strong>flag layout</strong>
+				card follows the default structure.</p>
+		{% endblock %}
+	{% endembed %}
+</ul>
+
+<h3 class="site-preview-heading">Flag Layout (Media Right)</h3>
+<ul class="usa-card-group">
+	{% embed "drupito_components_uswds:card" with {
+    header_text: "Flag Layout (Media Right)",
+    has_media: true,
+    layout: "flag",
+    flag_media_position: "right",
+    media_image: "https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg",
+    media_alt: "A placeholder image",
+    footer_text: "Visit Florida Keys",
+    footer_url: "#"
+  } only %}
+		{% block body %}
+			<p>This
+				<strong>flag layout</strong>
+				card has the media
+				<strong>on the right</strong>.</p>
+		{% endblock %}
+	{% endembed %}
+</ul>
+
+<h3 class="site-preview-heading">Card with Button Footer</h3>
+<ul class="usa-card-group">
+	{% embed "drupito_components_uswds:card" with {
+    header_text: "Card with Button Footer",
+    footer_text: "Click Me",
+    footer_type: "button"
+  } only %}
+		{% block body %}
+			<p>This card uses a
+				<strong>button</strong>
+				instead of a link.</p>
+		{% endblock %}
+	{% endembed %}
+</ul>
+
