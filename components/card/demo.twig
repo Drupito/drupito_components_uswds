@@ -19,6 +19,7 @@
 <h3 class="site-preview-heading">Default Card (Header Above)</h3>
 <ul class="usa-card-group">
   {% embed "drupito_components_uswds:card" with {
+        media_display: "exdent",
     card_title: "Default Card (Header Above)",
     header_above: true
   } only %}
@@ -56,6 +57,7 @@
     card_title: "Card with Media (Header Above)",
     media_image: "https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg",
     media_alt: "A placeholder image",
+    media_display: "exdent",
     header_above: true
   } only %}
     {% block body %}
@@ -143,13 +145,14 @@
   {% endembed %}
 </ul>
 
-<h3 class="site-preview-heading">Flag Layout (Media Right)</h3>
+<h3 class="site-preview-heading">Flag Layout - Media Right - inset</h3>
 <ul class="usa-card-group">
   {% embed "drupito_components_uswds:card" with {
     card_title: "Flag Layout (Media Right)",
     media_image: "https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg",
     media_alt: "A placeholder image",
     media_display: "flag",
+    
     flag_media_position: "right"
   } only %}
     {% block body %}
