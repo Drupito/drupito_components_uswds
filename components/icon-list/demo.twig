@@ -1,272 +1,107 @@
-{# SOLUTION 1 f using an array of items #}
 
-{# Test Case 1: Default Variant #}{% embed "drupito_components_uswds:icon-list" with {
+{# Test Case 1: Default Variant #}
+{% embed "drupito_components_uswds:icon-list" with {
   variant: "default",
-  items: [
-    {
-      icon: "check_circle",
-      icon_color: "text-green",
-      content: "Wash your hands for 20 seconds with soap"
-    },
-    {
-      icon: "check_circle",
-      icon_color: "text-green",
-      content: "Stay six feet away from others"
-    },
-    {
-      icon: "cancel",
-      icon_color: "text-red",
-      content: "Avoid large gatherings"
-    }
-  ]
+  items: [ {}, {}, {} ]
 } only %}
+  {% block icon_1 %}
+    {% embed "drupito_components_uswds:icon" with { icon: "check_circle", icon_color: "text-green" } only %}{% endembed %}
+  {% endblock %}
+  {% block content_1 %} Wash your hands for 20 seconds with soap {% endblock %}
+
+  {% block icon_2 %}
+    {% embed "drupito_components_uswds:icon" with { icon: "check_circle", icon_color: "text-green" } only %}{% endembed %}
+  {% endblock %}
+  {% block content_2 %} Stay six feet away from others {% endblock %}
+
+  {% block icon_3 %}
+    {% embed "drupito_components_uswds:icon" with { icon: "cancel", icon_color: "text-red" } only %}{% endembed %}
+  {% endblock %}
+  {% block content_3 %} Avoid large gatherings {% endblock %}
 {% endembed %}
 
-{# Test Case 2: Simple Content Variant #}{% embed "drupito_components_uswds:icon-list" with {
+{# Test Case 2: Simple Content Variant #}
+{% embed "drupito_components_uswds:icon-list" with {
   variant: "simple",
   section_description: "Benefits of joining Global Entry program:",
-  items: [
-    {
-      icon: "thumb_up_alt",
-      content: "No processing lines"
-    },
-    {
-      icon: "thumb_up_alt",
-      content: "Expedited benefits"
-    },
-    {
-      icon: "thumb_up_alt",
-      content: "Available at major U.S. airports"
-    },
-    {
-      icon: "thumb_up_alt",
-      content: "Reduced wait times"
-    }
-  ]
+  items: [ {}, {}, {}, {} ]
 } only %}
+  {% for i in range(1, 5) %}
+    {% block "icon_" ~ i %}
+      {% embed "drupito_components_uswds:icon" with { icon: "thumb_up_alt" } only %}{% endembed %}
+    {% endblock %}
+  {% endfor %}
+  {% block content_1 %}No processing lines{% endblock %}
+  {% block content_2 %}Expedited benefits{% endblock %}
+  {% block content_3 %}Available at major U.S. airports{% endblock %}
+  {% block content_4 %}Reduced wait times{% endblock %}
 {% endembed %}
-
-{# Test Case 3: Rich Content Variant #}{% embed "drupito_components_uswds:icon-list" with {
-  variant: "rich",
-  items: [
-    {
-      icon: "check_circle",
-      icon_color: "text-ink",
-      title: "Donate cash when possible.",
-      content: "Financial contributions to recognized disaster relief organizations are the fastest, most flexible and most effective method of donating. Organizations on the ground know what is needed."
-    },
-    {
-      icon: "check_circle",
-      icon_color: "text-ink",
-      title: "Confirm what donations are needed.",
-      content: "Unneeded and unsolicited goods burden local organizations' ability to meet survivors' confirmed needs."
-    },
-    {
-      icon: "check_circle",
-      icon_color: "text-ink",
-      title: "Volunteer",
-      content: "Talk to trusted organizations about volunteering opportunities."
-    }
-  ]
-} only %}
-{% endembed %}
-
-{# Test Case 4: Custom Size with Rich Content Variant #}{% embed "drupito_components_uswds:icon-list" with {
-  variant: "custom-size-rich",
-  items: [
-    {
-      icon: "attach_money",
-      icon_color: "text-green",
-      title: "Let the sun shine.",
-      content: "On sunny days, open your curtains to naturally warm your home; on warm days, close them to keep your house cool."
-    },
-    {
-      icon: "attach_money",
-      icon_color: "text-green",
-      title: "Adjust your schedule.",
-      content: "Run high-energy appliances during off-peak hours to reduce costs."
-    },
-    {
-      icon: "attach_money",
-      icon_color: "text-green",
-      title: "Fill it up.",
-      content: "Wash full loads to maximize efficiency and reduce energy usage."
-    }
-  ]
-} only %}
-{% endembed %}
-
-{# Test Case 5: Custom Size Variant #}{% embed "drupito_components_uswds:icon-list" with {
-  variant: "custom-size",
-  items: [
-    {
-      icon: "help",
-      icon_color: "text-blue",
-      snippet_bold: "Timing.",
-      snippet_plain: " Is now the right time to start a business?"
-    },
-    {
-      icon: "help",
-      icon_color: "text-blue",
-      snippet_bold: "Funding.",
-      snippet_plain: " Do I have enough money to launch a business?"
-    },
-    {
-      icon: "help",
-      icon_color: "text-blue",
-      snippet_bold: "Need.",
-      snippet_plain: " Will this business fill a real need for my customers?"
-    }
-  ]
-} only %}
-{% endembed %}
-
-{# SOLUTION 2 with fixed number of items#}
-
-{# Test Case 1: Default Variant  #}
-
-	{% embed "drupito_components_uswds:icon-list" with {
-  variant: "default",
-  item_1: {
-      icon: "check_circle",
-      icon_color: "text-green"
-  },
-  item_2: {
-      icon: "check_circle",
-      icon_color: "text-green"
-  },
-  item_3: {
-      icon: "cancel",
-      icon_color: "text-red"
-  }
-} only %}
-		{% block content_1 %}
-	Wash your hands for 20 seconds with soap
-	{% endblock %}
-		{% block content_2 %}
-	Stay six feet away from others
-	{% endblock %}
-		{% block content_3 %}
-	Avoid large gatherings
-{% endblock %}
-{% endembed %}
-
-{# Test Case 2: Simple Content Variant  #}
-
-
-	{% embed "drupito_components_uswds:icon-list" with {
-  variant: "simple",
-  section_description: "Benefits of joining Global Entry program:",
-  item_1: {
-      icon: "thumb_up_alt"
-  },
-  item_2: {
-      icon: "thumb_up_alt"
-  },
-  item_3: {
-      icon: "thumb_up_alt"
-  },
-  item_4: {
-      icon: "thumb_up_alt"
-  }
-} only %}
-		{% block content_1 %}
-	No processing lines
-	{% endblock %}
-		{% block content_2 %}
-	Expedited benefits
-	{% endblock %}
-		{% block content_3 %}
-	Available at major U.S. airports
-	{% endblock %}
-		{% block content_4 %}
-	Reduced wait times
-{% endblock %}
-
-{% endembed %}
-
 
 {# Test Case 3: Rich Content Variant #}
-
-	{% embed "drupito_components_uswds:icon-list" with {
+{% embed "drupito_components_uswds:icon-list" with {
   variant: "rich",
-  item_1: {
-      icon: "check_circle",
-      icon_color: "text-ink",
-      title: "Donate cash when possible."
-  },
-  item_2: {
-      icon: "check_circle",
-      icon_color: "text-ink",
-      title: "Confirm what donations are needed."
-  },
-  item_3: {
-      icon: "check_circle",
-      icon_color: "text-ink",
-      title: "Volunteer"
-  }
+  items: [
+    { title: "Donate cash when possible." },
+    { title: "Confirm what donations are needed." },
+    { title: "Volunteer" }
+  ]
 } only %}
-		{% block content_1 %}
-	Financial contributions to recognized disaster relief organizations are the fastest, most flexible, and most effective method of donating. Organizations on the ground know what is needed.
-	{% endblock %}
-		{% block content_2 %}
-	Unneeded and unsolicited goods burden local organizations ability to meet survivors' confirmed needs.
-	{% endblock %}
-		{% block content_3 %}
-	Engage with local disaster relief groups to learn how you can help on the ground.
-{% endblock %}
+  {% for i in range(1, 4) %}
+    {% block "icon_" ~ i %}
+      {% embed "drupito_components_uswds:icon" with { icon: "check_circle", icon_color: "text-ink" } only %}{% endembed %}
+    {% endblock %}
+  {% endfor %}
+  {% block content_1 %}
+    Financial contributions to recognized disaster relief organizations are the fastest, most flexible, and most effective method of donating.
+  {% endblock %}
+  {% block content_2 %}
+    Unneeded and unsolicited goods burden local organizations' ability to meet survivors' confirmed needs.
+  {% endblock %}
+  {% block content_3 %}
+    Engage with local disaster relief groups to learn how you can help on the ground.
+  {% endblock %}
 {% endembed %}
 
-{# Test Case 4: Custom Size with Rich Content Variant  #}
-
-	{% embed "drupito_components_uswds:icon-list" with {
+{# Test Case 4: Custom Size with Rich Content Variant #}
+{% embed "drupito_components_uswds:icon-list" with {
   variant: "custom-size-rich",
-  item_1: {
-      icon: "attach_money",
-      icon_color: "text-green",
-      title: "Let the sun shine."
-  },
-  item_2: {
-      icon: "attach_money",
-      icon_color: "text-green",
-      title: "Adjust your schedule."
-  },
-  item_3: {
-      icon: "attach_money",
-      icon_color: "text-green",
-      title: "Fill it up."
-  }
+  items: [
+    { title: "Let the sun shine." },
+    { title: "Adjust your schedule." },
+    { title: "Fill it up." }
+  ]
 } only %}
-		{% block content_1 %}
-	On sunny days, open your curtains to naturally warm your home; on warm days, close them to keep your house cool.
-	{% endblock %}
-		{% block content_2 %}
-	Run high-energy appliances during off-peak hours to reduce costs.
-	{% endblock %}
-		{% block content_3 %}
-	Wash full loads to maximize efficiency and reduce energy usage.
-{% endblock %}
+  {% for i in range(1, 4) %}
+    {% block "icon_" ~ i %}
+      {% embed "drupito_components_uswds:icon" with { icon: "attach_money", icon_color: "text-green" } only %}{% endembed %}
+    {% endblock %}
+  {% endfor %}
+  {% block content_1 %}
+    On sunny days, open your curtains to naturally warm your home; on warm days, close them to keep your house cool.
+  {% endblock %}
+  {% block content_2 %}
+    Run high-energy appliances during off-peak hours to reduce costs.
+  {% endblock %}
+  {% block content_3 %}
+    Wash full loads to maximize efficiency and reduce energy usage.
+  {% endblock %}
 {% endembed %}
 
-{# Test Case 5: Custom Size Variant  #}{% embed "drupito_components_uswds:icon-list" with {
+{# Test Case 5: Custom Size Variant #}
+{% embed "drupito_components_uswds:icon-list" with {
   variant: "custom-size",
-  item_1: {
-      icon: "help",
-      icon_color: "text-blue",
-      snippet_bold: "Timing.",
-      snippet_plain: " Is now the right time to start a business?"
-  },
-  item_2: {
-      icon: "help",
-      icon_color: "text-blue",
-      snippet_bold: "Funding.",
-      snippet_plain: " Do I have enough money to launch a business?"
-  },
-  item_3: {
-      icon: "help",
-      icon_color: "text-blue",
-      snippet_bold: "Need.",
-      snippet_plain: " Will this business fill a real need for my customers?"
-  }
-} only %}{% endembed %}
-
+  items: [
+    { snippet_bold: "Timing.", snippet_plain: " Is now the right time to start a business?" },
+    { snippet_bold: "Funding.", snippet_plain: " Do I have enough money to launch a business?" },
+    { snippet_bold: "Need.", snippet_plain: " Will this business fill a real need for my customers?" }
+  ]
+} only %}
+  {% for i in range(1, 4) %}
+    {% block "icon_" ~ i %}
+      {% embed "drupito_components_uswds:icon" with { icon: "help", icon_color: "text-blue" } only %}{% endembed %}
+    {% endblock %}
+  {% endfor %}
+  {% block content_1 %}<strong>Timing.</strong> Is now the right time to start a business?{% endblock %}
+  {% block content_2 %}<strong>Funding.</strong> Do I have enough money to launch a business?{% endblock %}
+  {% block content_3 %}<strong>Need.</strong> Will this business fill a real need for my customers?{% endblock %}
+{% endembed %}
