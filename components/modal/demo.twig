@@ -1,0 +1,124 @@
+{# This is the test case for the default modal #}
+
+{# the heading_id would be used for aria-labelledby #}
+{# the description_id would be used for aria-describedby #}
+
+{% embed "drupito_components_uswds:modal" with { 
+    html_id: "example-modal-1",
+    title: "Are you sure you want to continue?",
+    heading_id: 'modal-1-heading', 
+    description_id: 'modal-1-description'
+} only %}
+
+  {% block open_modal_button_content %}
+    {% embed "drupito_components_uswds:button" with { 
+        button_text: "Open default modal",
+        attributes: { 
+            href: "#example-modal-1", 
+            "aria-controls": html_id,
+            "data-open-modal": true 
+        }
+    } only %}{% endembed %}
+  {% endblock %}
+
+  {% block content %}
+    <p>You have unsaved changes that will be lost.</p>
+  {% endblock %}
+
+  {% block primary_action_content %}
+    {% embed "drupito_components_uswds:button" with { 
+        button_text: "Continue without saving", 
+        attributes: { "data-close-modal": true }
+    } only %}{% endembed %}
+  {% endblock %}
+
+  {% block secondary_action_content  %}
+    {% embed "drupito_components_uswds:button" with { 
+        button_text: "Go back",
+        style: 'unstyled', 
+        attributes: { "data-close-modal": true }
+    } only %}{% endembed %}
+  {% endblock %}
+{% endembed %}
+
+{# This is the test case for the large modal #}
+
+{% embed "drupito_components_uswds:modal" with { 
+    html_id: "example-modal-2",
+    is_large: true,
+    title: "Are you sure you want to continue?",
+    heading_id: 'modal-2-heading', 
+    description_id: 'modal-2-description'
+} only %}
+
+  {% block open_modal_button_content %}
+    {% embed "drupito_components_uswds:button" with { 
+        button_text: "Open large modal",
+        attributes: { 
+            href: "#example-modal-2", 
+            "aria-controls": html_id,
+            "data-open-modal": true 
+        }
+    } only %}{% endembed %}
+  {% endblock %}
+
+  {% block content %}
+    <p>You have unsaved changes that will be lost.</p>
+  {% endblock %}
+
+  {% block primary_action_content %}
+    {% embed "drupito_components_uswds:button" with { 
+        button_text: "Continue without saving", 
+        attributes: { "data-close-modal": true }
+    } only %}{% endembed %}
+  {% endblock %}
+
+  {% block secondary_action_content %}
+    {% embed "drupito_components_uswds:button" with { 
+        button_text: "Go back",
+        style: 'unstyled', 
+        attributes: { "data-close-modal": true }
+    } only %}{% endembed %}
+  {% endblock %}
+{% endembed %}
+
+{# This is the test case for the modal with forced action #}
+
+{% embed "drupito_components_uswds:modal" with { 
+    html_id: "example-modal-3",
+    require_user_action: true,
+    title: "Are you sure you want to continue?",
+    heading_id: 'modal-3-heading', 
+    description_id: 'modal-3-description'
+} only %}
+
+  {% block open_modal_button_content %}
+    {% embed "drupito_components_uswds:button" with { 
+        button_text: "Open modal with forced action",
+        attributes: { 
+            href: "#example-modal-3", 
+            "aria-controls": html_id,
+            "data-open-modal": true 
+        }
+    } only %}{% endembed %}
+  {% endblock %}
+
+  {% block content %}
+    <p>You have unsaved changes that will be lost.</p>
+  {% endblock %}
+
+  {% block primary_action_content %}
+    {% embed "drupito_components_uswds:button" with { 
+        button_text: "Continue without saving", 
+        attributes: { "data-close-modal": true }
+    } only %}{% endembed %}
+  {% endblock %}
+
+  {% block secondary_action_content %}
+    {% embed "drupito_components_uswds:button" with { 
+        button_text: "Go back",
+        style: 'unstyled', 
+        attributes: { "data-close-modal": true }
+    } only %}{% endembed %}
+  {% endblock %}
+{% endembed %}
