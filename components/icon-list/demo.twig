@@ -100,8 +100,6 @@
     {% block "icon_" ~ i %}
       {% embed "drupito_components_uswds:icon" with { icon: "help", icon_color: "text-blue" } only %}{% endembed %}
     {% endblock %}
-  {% endfor %}
-  {% block content_1 %}<strong>Timing.</strong> Is now the right time to start a business?{% endblock %}
-  {% block content_2 %}<strong>Funding.</strong> Do I have enough money to launch a business?{% endblock %}
-  {% block content_3 %}<strong>Need.</strong> Will this business fill a real need for my customers?{% endblock %}
+{% endfor %}
+
 {% endembed %}
