@@ -1,0 +1,42 @@
+name: Checkbox
+status: stable
+description: USWDS Checkbox Component
+libraryOverrides:
+  dependencies:
+    - drupito_components_uswds/uswds
+props:
+  type: 'object'
+  properties:
+    disabled:
+      type: 'boolean'
+      title: 'Disabled'
+      description: 'Disable the checkbox'
+      default: false
+    label:
+      type: 'string'
+      title: 'Label'
+      description: 'The text displayed next to the checkbox'
+      required: true
+    use_tile_display:
+      type: 'boolean'
+      title: 'Tile Style'
+      description: 'Tile style display'
+    checkbox_tile_text:
+      type: 'string'
+      title: 'Checkbox Tile Text'
+      description: 'Optional additional text displayed inside tile checkboxes'
+    html_id:
+      type: 'string'
+      title: 'Semantic HTML ID Attribute'
+      description: 'Override the default HTML ID and name attributes for the checkbox'
+    value:
+      type: 'string'
+      title: 'Value'
+      description: 'The checkbox value attribute'
+      default: 'on'
+      required: true
+    checked:
+      type: 'boolean'
+      title: 'Checked'
+      description: 'Checks if the checkbox is checked'
+      default: false
