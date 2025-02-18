@@ -12,10 +12,10 @@ props:
       title: Multiselectable
       description: If true, multiple accordion items can be expanded at once.
       default: false
-    remember_last_selection:
+    save_state:
       type: boolean
-      title: Remember the last selection
-      description: If true, then remember the last selection
+      title: Save expanded state
+      description: "If true, accordion items' expanded/collapsed states will persist for the current visitor."
       default: false
     bordered:
       type: boolean
