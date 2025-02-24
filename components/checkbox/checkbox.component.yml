@@ -6,6 +6,9 @@ libraryOverrides:
     - drupito_components_uswds/uswds
 props:
   type: 'object'
+  required:
+   - label
+   - value
   properties:
     disabled:
       type: 'boolean'
@@ -16,7 +19,6 @@ props:
       type: 'string'
       title: 'Label'
       description: 'The text displayed next to the checkbox'
-      required: true
     use_tile_display:
       type: 'boolean'
       title: 'Tile Style'
@@ -34,7 +36,6 @@ props:
       title: 'Value'
       description: 'The checkbox value attribute'
       default: 'on'
-      required: true
     checked:
       type: 'boolean'
       title: 'Checked'
