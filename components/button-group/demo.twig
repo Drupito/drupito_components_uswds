@@ -1,181 +1,141 @@
 <h1>Button Group Test</h1>
 
-{# Test Case 1: Default Button Group #}
+<h2>Default Button Group</h2>
 
 {% embed "drupito_components_uswds:button-group" with {
-  segmented: false
-} only %}
-{% block button_1 %}
-    {% embed "drupito_components_uswds:button" with { button_text: 'Back', outline: true } only %}{% endembed %}
-  {% endblock %}
-  
-  {% block button_2 %}
-    {% embed "drupito_components_uswds:button" with { button_text: 'Continue' } only %}{% endembed %}
-  {% endblock %}
-{% endembed %}
+  buttons: [
+    {
+      button_text: 'Back',
+      url: '#',
+      outline: true
+    },
+    {
+      button_text: 'Continue'
+    }
+  ]
+} only %}{% endembed %}
 
-{# Test Case 2: Segmented Button Group (Mixed Variants) #}
+<h2>Segmented Button Group (Default) </h2>
 
-{% embed "drupito_components_uswds:button-group" with {
-  segmented: true
-} only %}
-  {% block button_1 %}
-    {% embed "drupito_components_uswds:button" with { button_text: 'Map' } only %}{% endembed %}
-  {% endblock %}
-
-  {% block button_2 %}
-    {% embed "drupito_components_uswds:button" with { button_text: 'Hybrid', outline: true } only %}{% endembed %}
-  {% endblock %}
-
-  {% block button_3 %}
-    {% embed "drupito_components_uswds:button" with { button_text: 'Satellite', outline: true } only %}{% endembed %}
-  {% endblock %}
-{% endembed %}
-
-{# Test Case 3: Segmented Button Group (All Default) #}
+{# Test Case 2: Segmented Button Group (Default) #}
 
 {% embed "drupito_components_uswds:button-group" with {
-  segmented: true
-} only %}
-{% block button_1 %}
-    {% embed "drupito_components_uswds:button" with { button_text: 'Map' } only %}{% endembed %}
-  {% endblock %}
+  segmented: true,
+  buttons: [
+    { button_text: 'Map' },
+    { button_text: 'Hybrid', outline: true },
+    { button_text: 'Satellite', outline: true }
+  ]
+} only %}{% endembed %}
 
-  {% block button_2 %}
-    {% embed "drupito_components_uswds:button" with { button_text: 'Hybrid' } only %}{% endembed %}
-  {% endblock %}
+<h2> Segmented active and focus.</h2>
 
-  {% block button_3 %}
-    {% embed "drupito_components_uswds:button" with { button_text: 'Satellite' } only %}{% endembed %}
-  {% endblock %}
-{% endembed %}
+{# Test Case 3: Segmented active and focus. #}
+
+{% embed "drupito_components_uswds:button-group" with {
+  segmented: true,
+  buttons: [
+   { button_text: 'Map' },
+   { button_text: 'Hybrid' },
+   { button_text: 'Satellite' }
+ ]
+} only %}{% endembed %}
+
+<h2> Segmented Button Group - Accent Cool </h2>
 
 {# Test Case 4: Segmented Button Group (Accent Cool) #}
 
 {% embed "drupito_components_uswds:button-group" with {
-  segmented: true
-} only %}
-{% block button_1 %}
-    {% embed "drupito_components_uswds:button" with { button_text: 'Map', accent: 'cool' } only %}{% endembed %}
-  {% endblock %}
+  segmented: true,
+  color_scheme: 'cool',
+  buttons: [
+    { button_text: 'Map' },
+    { button_text: 'Hybrid' },
+    { button_text: 'Satellite' }
+  ]
+} only %}{% endembed %}
 
-  {% block button_2 %}
-    {% embed "drupito_components_uswds:button" with { button_text: 'Hybrid', accent: 'cool' } only %}{% endembed %}
-  {% endblock %}
-
-  {% block button_3 %}
-    {% embed "drupito_components_uswds:button" with { button_text: 'Satellite', accent: 'cool' } only %}{% endembed %}
-  {% endblock %}
-    
-{% endembed %}
+<h2> Segmented Button Group - Accent Warm </h2>
 
 {# Test Case 5: Segmented Button Group (Accent Warm) #}
 
 {% embed "drupito_components_uswds:button-group" with {
-  segmented: true
-} only %}
-  {% block button_1 %}
-    {% embed "drupito_components_uswds:button" with { button_text: 'Map', accent: 'warm' } only %}{% endembed %}
-  {% endblock %}
+  segmented: true,
+  color_scheme: 'warm',
+  buttons: [
+    { button_text: 'Map' },
+    { button_text: 'Hybrid' },
+    { button_text: 'Satellite' }
+  ]
+} only %}{% endembed %}
 
-  {% block button_2 %}
-    {% embed "drupito_components_uswds:button" with { button_text: 'Hybrid', accent: 'warm' } only %}{% endembed %}
-  {% endblock %}
-
-  {% block button_3 %}
-    {% embed "drupito_components_uswds:button" with { button_text: 'Satellite', accent: 'warm' } only %}{% endembed %}
-  {% endblock %}
-{% endembed %}
+<h2> Segmented Button Group - Base </h2>
 
 {# Test Case 6: Segmented Button Group (Base) #}
 
 {% embed "drupito_components_uswds:button-group" with {
-  segmented: true
-} only %}
-{% block button_1 %}
-    {% embed "drupito_components_uswds:button" with { button_text: 'Map', style: 'base' } only %}{% endembed %}
-  {% endblock %}
+  segmented: true,
+  style: 'base',
+  buttons: [
+    { button_text: 'Map' },
+    { button_text: 'Hybrid' },
+    { button_text: 'Satellite' }
+  ]
+} only %}{% endembed %}
 
-  {% block button_2 %}
-    {% embed "drupito_components_uswds:button" with { button_text: 'Hybrid', style: 'base' } only %}{% endembed %}
-  {% endblock %}
-
-  {% block button_3 %}
-    {% embed "drupito_components_uswds:button" with { button_text: 'Satellite', style: 'base' } only %}{% endembed %}
-  {% endblock %}
-{% endembed %}
+<h2> Segmented Button Group - Big </h2>
 
 {# Test Case 7: Segmented Button Group (Big) #}
 
 {% embed "drupito_components_uswds:button-group" with {
-  segmented: true
-} only %}
-{% block button_1 %}
-    {% embed "drupito_components_uswds:button" with { button_text: 'Map', big: true } only %}{% endembed %}
-  {% endblock %}
+  segmented: true,
+  size: 'big',
+  buttons: [
+    { button_text: 'Map' },
+    { button_text: 'Hybrid' },
+    { button_text: 'Satellite' }
+  ]
+} only %}{% endembed %}
 
-  {% block button_2 %}
-    {% embed "drupito_components_uswds:button" with { button_text: 'Hybrid', big: true } only %}{% endembed %}
-  {% endblock %}
-
-  {% block button_3 %}
-    {% embed "drupito_components_uswds:button" with { button_text: 'Satellite', big: true } only %}{% endembed %}
-  {% endblock %}
-{% endembed %}
+<h2> Segmented Button Group - Outline </h2>
 
 {# Test Case 8: Segmented Button Group (Outline) #}
 
 {% embed "drupito_components_uswds:button-group" with {
-  segmented: true
-} only %}
-{% block button_1 %}
-    {% embed "drupito_components_uswds:button" with { button_text: 'Map', outline: true } only %}{% endembed %}
-  {% endblock %}
+  segmented: true,
+  style_variant: 'outline',
+  buttons: [
+    { button_text: 'Map' },
+    { button_text: 'Hybrid' },
+    { button_text: 'Satellite' }
+  ]
+} only %}{% endembed %}
 
-  {% block button_2 %}
-    {% embed "drupito_components_uswds:button" with { button_text: 'Hybrid', outline: true } only %}{% endembed %}
-  {% endblock %}
-
-  {% block button_3 %}
-    {% embed "drupito_components_uswds:button" with { button_text: 'Satellite', outline: true } only %}{% endembed %}
-  {% endblock %}
-{% endembed %}
+<h2> Segmented Button Group - Outline Inverse </h2>
 
 {# Test Case 9: Segmented Button Group (Outline Inverse) #}
 
-<div class="bg-base-darkest padding-1" style="max-width: fit-content">
-	{% embed "drupito_components_uswds:button-group" with {
-    segmented: true
-  } only %}
-  {% block button_1 %}
-      {% embed "drupito_components_uswds:button" with { button_text: 'Map', outline: true, inverse: true } only %}{% endembed %}
-    {% endblock %}
+{% embed "drupito_components_uswds:button-group" with {
+  segmented: true,
+  style_variant: 'inverse',
+  buttons: [
+    { button_text: 'Map' },
+    { button_text: 'Hybrid' },
+    { button_text: 'Satellite' }
+  ]
+} only %}{% endembed %}
 
-    {% block button_2 %}
-      {% embed "drupito_components_uswds:button" with { button_text: 'Hybrid', outline: true, inverse: true } only %}{% endembed %}
-    {% endblock %}
-
-    {% block button_3 %}
-      {% embed "drupito_components_uswds:button" with { button_text: 'Satellite', outline: true, inverse: true } only %}{% endembed %}
-    {% endblock %}
-  {% endembed %}
-</div>
+<h2> Segmented Button Group - Secondary </h2>
 
 {# Test Case 10: Segmented Button Group (Secondary) #}
 
 {% embed "drupito_components_uswds:button-group" with {
-  segmented: true
-} only %}
-{% block button_1 %}
-    {% embed "drupito_components_uswds:button" with { button_text: 'Map', style: 'secondary' } only %}{% endembed %}
-  {% endblock %}
-
-  {% block button_2 %}
-    {% embed "drupito_components_uswds:button" with { button_text: 'Hybrid', style: 'secondary' } only %}{% endembed %}
-  {% endblock %}
-
-  {% block button_3 %}
-    {% embed "drupito_components_uswds:button" with { button_text: 'Satellite', style: 'secondary' } only %}{% endembed %}
-  {% endblock %}
-{% endembed %}
+  segmented: true,
+  style: 'secondary',
+  buttons: [
+    { button_text: 'Map' },
+    { button_text: 'Hybrid' },
+    { button_text: 'Satellite' }
+  ]
+} only %}{% endembed %}
 
