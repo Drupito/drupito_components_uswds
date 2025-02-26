@@ -1,0 +1,19 @@
+{% set classes = [
+  "usa-checkbox__input",
+  use_tile_display ? "usa-checkbox__input--tile"
+] %}
+
+{% if html_id is empty %}
+  {% set html_id = label|clean_id|replace({'-': '_'}) %}
+{% endif %}
+
+
+<div class="usa-checkbox">
+	<input{{ attributes.addClass(classes).setAttribute('id', html_id).setAttribute('type','checkbox').setAttribute('name', html_id).setAttribute('value', value).setAttribute('checked', checked ? 'checked': false).setAttribute('disabled', disabled ? 'disabled': false).setAttribute('aria-disabled', disabled) }}/>
+	<label class="usa-checkbox__label" for="{{ html_id }}">
+		{{ label }}
+		{% if use_tile_display %}
+			<span class="usa-checkbox__label-description">{{ checkbox_tile_text }}</span>
+		{% endif %}
+	</label>
+</div>
