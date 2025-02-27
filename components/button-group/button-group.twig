@@ -1,0 +1,70 @@
+{# Set up wrapper for inverse variant #}
+{% set wrapper_classes = [] %}
+{% if style_variant == 'inverse' %}
+  {% set wrapper_classes = ['bg-base-darkest', 'padding-1'] %}
+{% endif %}
+
+{% if wrapper_classes %}
+  <div class="{{ wrapper_classes|join(' ') }}" style="max-width: fit-content;">
+{% endif %}
+
+{# Main button group classes #}
+{% set group_classes = [
+  'usa-button-group',
+  segmented ? 'usa-button-group--segmented'
+] %}
+
+<ul{{ attributes.addClass(group_classes) }}>
+  {% for button in buttons %}
+    <li class="usa-button-group__item">
+      {% set button_props = {
+        button_text: button.button_text,
+        url: button.url ?? null,
+        disabled: button.disabled ?? false,
+        focus: button.focus ?? false,
+        big: (size == 'big') ? true : button.big ?? false,
+        inverse: (style_variant == 'inverse') ? true : button.inverse ?? false
+      } %}
+
+      {# Handle state with validation #}
+      {% if button.state is defined and button.state in ['active', 'hover'] %}
+        {% set button_props = button_props|merge({ state: button.state }) %}
+      {% endif %}
+
+      {# Handle color scheme propagation #}
+      {% if color_scheme == 'secondary' %}
+        {% set button_props = button_props|merge({ style: 'secondary' }) %}
+      {% elseif color_scheme in ['cool', 'warm'] %}
+        {% set button_props = button_props|merge({ accent: color_scheme }) %}
+      {% elseif color_scheme == 'base' %}
+        {% set button_props = button_props|merge({ style: 'base' }) %}
+      {% endif %}
+
+      {# Apply individual button overrides #}
+      {% if button.style is defined and button.style in ['unstyled', 'secondary', 'base'] %}
+        {% set button_props = button_props|merge({ style: button.style }) %}
+      {% endif %}
+      
+      {% if button.accent is defined and button.accent in ['warm', 'cool'] %}
+        {% set button_props = button_props|merge({ accent: button.accent }) %}
+      {% endif %}
+
+      {# Outline logic #}
+      {% set button_props = button_props|merge({
+        outline: button.outline ?? (style_variant == 'outline' or style_variant == 'inverse' or (color_scheme == 'default' and segmented and loop.index > 1))
+      }) %}
+
+      {# Render individual button #}
+      {% embed "drupito_components_uswds:button" with button_props only %}
+        {% block attributes %}
+          {{ parent() }}
+          {% if focus %}data-force-focus="true"{% endif %}
+        {% endblock %}
+      {% endembed %}
+    </li>
+  {% endfor %}
+</ul>
+
+{% if wrapper_classes %}
+  </div>
+{% endif %}
