@@ -1,3 +1,4 @@
+# components/card/card.component.yml
 name: Card
 status: stable
 description: USWDS Card Component
@@ -7,21 +8,13 @@ libraryOverrides:
 props:
   type: object
   properties:
-    heading:
+    heading_level:
+      type: number
+      title: Heading Level
+      default: 2
+    media_variant:
       type: string
-      title: Heading
-      description: Card heading text
-    body:
-      type: string
-      title: Body Content
-      description: Main content of the card
-    media:
-      type: string
-      title: Media
-      description: HTML for image/media content
-    media_style:
-      type: string
-      title: Media Style
+      title: Media Variant
       enum: [default, inset, exdent]
       default: default
     header_first:
@@ -39,7 +32,16 @@ props:
       title: Media Right Alignment
       description: Right-align media in flag layout
       default: false
-    footer:
-      type: string
-      title: Footer Content
-      description: Footer content (HTML or component)
+slots:
+  heading:
+    title: Heading
+    description: "Card title text (required)"
+  body:
+    title: Body Content
+    description: Main content of the card
+  media:
+    title: Media
+    description: HTML for image/media content
+  footer:
+    title: Footer Content
+    description: Footer content (HTML or component)
