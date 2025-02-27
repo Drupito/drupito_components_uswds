@@ -1,0 +1,54 @@
+{% set card_classes = [
+  'usa-card',
+  flag_layout ? 'usa-card--flag',
+  media_right and flag_layout ? 'usa-card--media-right',
+  header_first ? 'usa-card--header-first'
+] %}
+
+{% set container_classes = [
+  'usa-card__container'
+] %}
+
+{% set media_classes = ['usa-card__media'] %}
+{% if media_style == 'inset' %}
+  {% set media_classes = media_classes|merge(['usa-card__media--inset']) %}
+{% elseif media_style == 'exdent' %}
+  {% set media_classes = media_classes|merge(['usa-card__media--exdent']) %}
+{% endif %}
+{% if flag_layout %}
+  {% set media_classes = media_classes|merge(['usa-card__media--flag']) %}
+{% endif %}
+
+<div{{ attributes.addClass(card_classes) }}>
+  <div class="{{ container_classes|join(' ') }}">
+    {# Header Section #}
+    {% if heading %}
+      <div class="usa-card__header">
+        <h2 class="usa-card__heading">{{ heading }}</h2>
+      </div>
+    {% endif %}
+
+    {# Media Section #}
+    {% if media %}
+      <div class="{{ media_classes|join(' ') }}">
+        <div class="usa-card__img">
+          {{ media|raw }}
+        </div>
+      </div>
+    {% endif %}
+
+    {# Body Content #}
+    {% if body %}
+      <div class="usa-card__body">
+        {{ body }}
+      </div>
+    {% endif %}
+
+    {# Footer Section #}
+    {% if footer %}
+      <div class="usa-card__footer">
+        {{ footer|raw }}
+      </div>
+    {% endif %}
+  </div>
+</div>
