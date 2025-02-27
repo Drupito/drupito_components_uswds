@@ -1,87 +1,126 @@
-{# Test Case 1: Default Card #}
-<h2>Default Card</h2>
+<h1>Card Component Test Cases</h1>
 
-{% embed "drupito_components_uswds:card" with {
-  heading: "Default Card",
-  body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis earum tenetur quo cupiditate.",
-  footer: include('drupito_components_uswds:button', {button_text: "Visit Florida Keys"})
-} only %}
+<h2>1. Default Card</h2>
+
+{% embed "drupito_components_uswds:card" %}
+  {% block heading %}Card{% endblock %}
+  {% block body %}
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis earum
+      tenetur quo cupiditate, eaque qui officia recusandae.
+    </p>
+  {% endblock %}
+  {% block footer %}
+    {% embed "drupito_components_uswds:button" with { button_text: 'Visit Florida Keys', url: '#' } only %}{% endembed %}
+  {% endblock %}
 {% endembed %}
+<hr>
 
+<h2>2. Card with Media</h2>
 
-{# Test Case 2: Card with Media #}
-<h2>Card with Media</h2>
-
-{% embed "drupito_components_uswds:card" with {
-  heading: "Media Card",
-  body: "Card with image media content.",
-  media: "<img src='https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg' alt='Sample image'>",
-  footer: include('drupito_components_uswds:button', {button_text: "View Details"})
-} only %}
+{% embed "drupito_components_uswds:card" %}
+  {% block heading %}Card with Media{% endblock %}
+  {% block media %}
+    <img src="https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg" alt="A placeholder image" />
+  {% endblock %}
+  {% block body %}
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis earum
+      tenetur quo cupiditate, eaque qui officia recusandae.
+    </p>
+  {% endblock %}
+  {% block footer %}
+    {% embed "drupito_components_uswds:button" with { button_text: 'Visit Florida Keys', url: '#' } only %}{% endembed %}
+  {% endblock %}
 {% endembed %}
+<hr>
 
+<h2>3. Media with Header First (and Exdent)</h2>
 
-{# Test Case 3: Media with Header First #}
-<h2>Media with Header First</h2>
-{% embed "drupito_components_uswds:card" with {
-  heading: "Header First",
-  body: "Header appears before media content.",
-  media: "<img src='https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg' alt='Sample image'>",
-  header_first: true,
-  footer: include('drupito_components_uswds:button', {button_text: "Explore More"})
-} only %}
+{% embed "drupito_components_uswds:card" with { header_first: true, media_variant: 'exdent' } %}
+  {% block heading %}Media with header first{% endblock %}
+  {% block media %}
+    <img src="https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg" alt="A placeholder image" />
+  {% endblock %}
+  {% block body %}
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+      possimus similique nemo odit doloremque laudantium?
+    </p>
+  {% endblock %}
+  {% block footer %}
+   {% embed "drupito_components_uswds:button" with { button_text: 'Visit Florida Keys', url: '#' } only %}{% endembed %}
+  {% endblock %}
 {% endembed %}
+<hr>
 
-{# Test Case 4: Inset Media #}
-<h2>Inset Media</h2>
+<h2>4. Inset Media</h2>
 
-{% embed "drupito_components_uswds:card" with {
-  heading: "Inset Media",
-  body: "Media with inset styling.",
-  media: "<img src='https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg' alt='Sample image'>",
-  media_style: "inset",
-  footer: include('drupito_components_uswds:button', {button_text: "See Details"})
-} only %}
+{% embed "drupito_components_uswds:card" with { media_variant: 'inset' } %}
+  {% block heading %}Inset media{% endblock %}
+  {% block media %}
+    <img src="https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg" alt="A placeholder image" />
+  {% endblock %}
+  {% block body %}
+    <p>
+      Etiam vitae sodales metus. Fusce id orci dignissim, efficitur risus
+      eget, tempus odio. Donec lectus ante, auctor eget cursus sed,
+      convallis quis magna. Orci varius natoque penatibus et magnis dis
+      parturient montes, nascetur ridiculus mus. Mauris mattis tellus
+      bibendum aliquet malesuada.
+    </p>
+  {% endblock %}
+  {% block footer %}
+    {% embed "drupito_components_uswds:button" with { button_text: 'Visit Florida Keys', url: '#' } only %}{% endembed %}
+  {% endblock %}
 {% endembed %}
+<hr>
 
+<h2>5. Exdent Media</h2>
 
-{# Test Case 5: Exdent Media #}
-<h2>Exdent Media</h2>
-
-{% embed "drupito_components_uswds:card" with {
-  heading: "Exdent Media",
-  body: "Media extending beyond container.",
-  media: "<img src='https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg' alt='Sample image'>",
-  media_style: "exdent",
-  footer: include('drupito_components_uswds:button', {button_text: "Learn More"})
-} only %}
+{% embed "drupito_components_uswds:card" with { media_variant: 'exdent' } %}
+  {% block heading %}Exdent media{% endblock %}
+  {% block media %}
+    <img src="https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg" alt="A placeholder image" />
+  {% endblock %}
+  {% block body %}
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+      possimus similique nemo odit doloremque laudantium?
+    </p>
+  {% endblock %}
+  {% block footer %}
+    {% embed "drupito_components_uswds:button" with { button_text: 'Visit Florida Keys', url: '#' } only %}{% endembed %}
+  {% endblock %}
 {% endembed %}
+<hr>
+<h2>6. Flag Layout Card</h2>
 
-
-{# Test Case 6: Default Flag Layout #} 
-<h2>Default Flag Layout</h2>
-
-{% embed "drupito_components_uswds:card" with {
-  heading: "Flag Layout",
-  body: "Horizontal layout with media flag.",
-  media: "<img src='https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg' alt='Sample image'>",
-  flag_layout: true,
-  footer: include('drupito_components_uswds:button', {button_text: "Get Started"})
-} only %}
+{% embed "drupito_components_uswds:card" with { flag_layout: true } %}
+  {% block heading %}Default flag{% endblock %}
+  {% block media %}
+    <img src="https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg" alt="A placeholder image" />
+  {% endblock %}
+  {% block body %}
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+  {% endblock %}
+  {% block footer %}
+    {% embed "drupito_components_uswds:button" with { button_text: 'Visit Florida Keys', url: '#' } only %}{% endembed %}
+  {% endblock %}
 {% endembed %}
+<hr>
 
+<h2>7. Flag Layout Card with Media Right and Inset</h2>
 
-{# Flag Layout - Media Right - inset #}
-<h2>Flag Media Right Inset</h2>
-{% embed "drupito_components_uswds:card" with {
-  heading: "Right Flag",
-  body: "Flag layout with right media alignment.",
-  media: "<img src='https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg' alt='Sample image'>",
-  flag_layout: true,
-  media_right: true,
-  media_style: "inset",
-  footer: include('drupito_components_uswds:button', {button_text: "View Options"})
-} only %}
+{% embed "drupito_components_uswds:card" with { flag_layout: true, media_right: true, media_variant: 'inset' } %}
+  {% block heading %}Flag media right inset{% endblock %}
+  {% block media %}
+    <img src="https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg" alt="A placeholder image" />
+  {% endblock %}
+  {% block body %}
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+  {% endblock %}
+  {% block footer %}
+    {% embed "drupito_components_uswds:button" with { button_text: 'Visit Florida Keys', url: '#' } only %}{% endembed %}
+  {% endblock %}
 {% endembed %}
-
-
