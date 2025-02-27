@@ -1,138 +1,87 @@
-{# Default #}
+{# Test Case 1: Default Card #}
+<h2>Default Card</h2>
 
 {% embed "drupito_components_uswds:card" with {
-  card_title: "Default Card"
+  heading: "Default Card",
+  body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis earum tenetur quo cupiditate.",
+  footer: include('drupito_components_uswds:button', {button_text: "Visit Florida Keys"})
 } only %}
-  {% block body %}
-    <p>Lorem ipsum dolor sit amet,
-      <strong>consectetur</strong>
-      adipisicing elit.</p>
-  {% endblock %}
-  {% block footer %}
-    {% embed "drupito_components_uswds:button" with { button_text: "Learn More" } only %}{% endembed %}
-  {% endblock %}
 {% endembed %}
 
 
-{# Card with Media #}
+{# Test Case 2: Card with Media #}
+<h2>Card with Media</h2>
 
 {% embed "drupito_components_uswds:card" with {
-  card_title: "Card with Media",
-  media_image: "https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg",
-  media_alt: "A placeholder image"
+  heading: "Media Card",
+  body: "Card with image media content.",
+  media: "<img src='https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg' alt='Sample image'>",
+  footer: include('drupito_components_uswds:button', {button_text: "View Details"})
 } only %}
-  {% block body %}
-    <p>This is a
-      <strong>card</strong>
-      with an image.</p>
-  {% endblock %}
-  {% block footer %}
-    {% embed "drupito_components_uswds:button" with { button_text: "Learn More" } only %}{% endembed %}
-  {% endblock %}
 {% endembed %}
 
 
-{# Exdent Media #}
+{# Test Case 3: Media with Header First #}
+<h2>Media with Header First</h2>
 {% embed "drupito_components_uswds:card" with {
-  card_title: "Exdent Media",
-  media_image: "https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg",
-  media_alt: "A placeholder image",
-  media_display: "exdent"
+  heading: "Header First",
+  body: "Header appears before media content.",
+  media: "<img src='https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg' alt='Sample image'>",
+  header_first: true,
+  footer: include('drupito_components_uswds:button', {button_text: "Explore More"})
 } only %}
-  {% block body %}
-    <p>This card has
-      <strong>media extending over the edge</strong>.</p>
-  {% endblock %}
-  {% block footer %}
-    {% embed "drupito_components_uswds:button" with { button_text: "Learn More" } only %}{% endembed %}
-  {% endblock %}
 {% endembed %}
 
-{# Inset media #}
+{# Test Case 4: Inset Media #}
+<h2>Inset Media</h2>
 
 {% embed "drupito_components_uswds:card" with {
-  card_title: "Inset Media",
-  media_image: "https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg",
-  media_alt: "A placeholder image",
-  media_display: "inset"
+  heading: "Inset Media",
+  body: "Media with inset styling.",
+  media: "<img src='https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg' alt='Sample image'>",
+  media_style: "inset",
+  footer: include('drupito_components_uswds:button', {button_text: "See Details"})
 } only %}
-  {% block body %}
-    <p>This card has
-      <strong>indented media</strong>.</p>
-  {% endblock %}
-  {% block footer %}
-    {% embed "drupito_components_uswds:button" with { button_text: "Learn More" } only %}{% endembed %}
-  {% endblock %}
 {% endembed %}
 
 
-{# Header-First Layout #}
+{# Test Case 5: Exdent Media #}
+<h2>Exdent Media</h2>
 
 {% embed "drupito_components_uswds:card" with {
-  card_title: "Header-First Layout",
-  media_image: "https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg",
-  media_alt: "A placeholder image",
-  media_display: "header_first"
+  heading: "Exdent Media",
+  body: "Media extending beyond container.",
+  media: "<img src='https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg' alt='Sample image'>",
+  media_style: "exdent",
+  footer: include('drupito_components_uswds:button', {button_text: "Learn More"})
 } only %}
-  {% block body %}
-    <p>This card has the
-      <strong>header before the media</strong>.</p>
-  {% endblock %}
-  {% block footer %}
-    {% embed "drupito_components_uswds:button" with { button_text: "Learn More" } only %}{% endembed %}
-  {% endblock %}
 {% endembed %}
 
 
-{# Flag Layout Card #}
+{# Test Case 6: Default Flag Layout #} 
+<h2>Default Flag Layout</h2>
+
 {% embed "drupito_components_uswds:card" with {
-  card_title: "Flag Layout",
-  media_image: "https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg",
-  media_alt: "A placeholder image",
-  media_display: "flag"
+  heading: "Flag Layout",
+  body: "Horizontal layout with media flag.",
+  media: "<img src='https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg' alt='Sample image'>",
+  flag_layout: true,
+  footer: include('drupito_components_uswds:button', {button_text: "Get Started"})
 } only %}
-  {% block body %}
-    <p>This
-      <strong>flag layout</strong>
-      card follows the default structure.</p>
-  {% endblock %}
-  {% block footer %}
-    {% embed "drupito_components_uswds:button" with { button_text: "Learn More" } only %}{% endembed %}
-  {% endblock %}
 {% endembed %}
 
 
 {# Flag Layout - Media Right - inset #}
+<h2>Flag Media Right Inset</h2>
 {% embed "drupito_components_uswds:card" with {
-  card_title: "Flag Layout (Media Right)",
-  media_image: "https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg",
-  media_alt: "A placeholder image",
-  media_display: "flag",
-  flag_media_position: "right"
+  heading: "Right Flag",
+  body: "Flag layout with right media alignment.",
+  media: "<img src='https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg' alt='Sample image'>",
+  flag_layout: true,
+  media_right: true,
+  media_style: "inset",
+  footer: include('drupito_components_uswds:button', {button_text: "View Options"})
 } only %}
-  {% block body %}
-    <p>This
-      <strong>flag layout</strong>
-      card has the media
-      <strong>on the right</strong>.</p>
-  {% endblock %}
-  {% block footer %}
-    {% embed "drupito_components_uswds:button" with { button_text: "Learn More" } only %}{% endembed %}
-  {% endblock %}
 {% endembed %}
 
-
-{# Card with Button Footer #}
-{% embed "drupito_components_uswds:card" with {
-  card_title: "Card with Button Footer"
-} only %}
-  {% block body %}
-    <p>This card uses a
-      <strong>button</strong>
-      instead of a link.</p>
-  {% endblock %}
-  {% block footer %}
-    {% embed "drupito_components_uswds:button" with { button_text: "Click Me" } only %}{% endembed %}
-  {% endblock %}
-{% endembed %}
 
