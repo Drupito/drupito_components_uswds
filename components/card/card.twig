@@ -1,54 +1,44 @@
+{# components/card/card.twig #}
 {% set card_classes = [
   'usa-card',
-  flag_layout ? 'usa-card--flag',
-  media_right and flag_layout ? 'usa-card--media-right',
-  header_first ? 'usa-card--header-first'
+  flag_layout ? 'usa-card--flag' : '',
+  media_right and flag_layout ? 'usa-card--media-right' : '',
 ] %}
 
 {% set container_classes = [
   'usa-card__container'
 ] %}
 
-{% set media_classes = ['usa-card__media'] %}
-{% if media_style == 'inset' %}
-  {% set media_classes = media_classes|merge(['usa-card__media--inset']) %}
-{% elseif media_style == 'exdent' %}
-  {% set media_classes = media_classes|merge(['usa-card__media--exdent']) %}
-{% endif %}
-{% if flag_layout %}
-  {% set media_classes = media_classes|merge(['usa-card__media--flag']) %}
-{% endif %}
+{% set media_classes = [
+  'usa-card__media',
+  media_variant != 'default' ? 'usa-card__media--' ~ media_variant : ''
+] %}
 
-<div{{ attributes.addClass(card_classes) }}>
+<div {{ attributes.addClass(card_classes) }}>
   <div class="{{ container_classes|join(' ') }}">
+
     {# Header Section #}
-    {% if heading %}
-      <div class="usa-card__header">
-        <h2 class="usa-card__heading">{{ heading }}</h2>
-      </div>
-    {% endif %}
+    <div class="usa-card__header">
+      <h{{ heading_level|default(2) }} class="usa-card__heading">
+        {% block heading %}{% endblock %}
+      </h{{ heading_level|default(2) }}>
+    </div>
 
     {# Media Section #}
-    {% if media %}
-      <div class="{{ media_classes|join(' ') }}">
-        <div class="usa-card__img">
-          {{ media|raw }}
-        </div>
+    <div class="{{ media_classes|join(' ') }}">
+      <div class="usa-card__img">
+        {% block media %}{% endblock %}
       </div>
-    {% endif %}
+    </div>
 
     {# Body Content #}
-    {% if body %}
-      <div class="usa-card__body">
-        {{ body }}
-      </div>
-    {% endif %}
+    <div class="usa-card__body">
+      {% block body %}{% endblock %}
+    </div>
 
     {# Footer Section #}
-    {% if footer %}
-      <div class="usa-card__footer">
-        {{ footer|raw }}
-      </div>
-    {% endif %}
+    <div class="usa-card__footer">
+      {% block footer %}{% endblock %}
+    </div>
   </div>
 </div>
