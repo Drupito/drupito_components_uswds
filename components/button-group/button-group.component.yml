@@ -1,0 +1,34 @@
+name: Button Group
+status: stable
+description: USWDS Button Group Component
+libraryOverrides:
+  dependencies:
+    - drupito_components_uswds/uswds
+props:
+  type: object
+  properties:
+    segmented:
+      type: boolean
+      title: Segmented Style
+      description: Display buttons in a segmented layout
+      default: false
+    buttons:
+      type: array
+      title: Buttons
+      description: Array of button configurations
+    color_scheme:
+      type: string
+      enum: ["default", "primary", "secondary", "cool", "warm", "base" ]
+      default: "default"
+    size:
+      type: string
+      enum: ["default", "big"]
+      default: "default"
+    style_variant:
+      type: string
+      enum: ["default", "outline", "inverse"]
+      default: "default"
+slots:
+  attributes:
+    title: HTML attributes
+    description: Additional HTML attributes
