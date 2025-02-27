@@ -1,0 +1,45 @@
+name: Card
+status: stable
+description: USWDS Card Component
+libraryOverrides:
+  dependencies:
+    - drupito_components_uswds/uswds
+props:
+  type: object
+  properties:
+    heading:
+      type: string
+      title: Heading
+      description: Card heading text
+    body:
+      type: string
+      title: Body Content
+      description: Main content of the card
+    media:
+      type: string
+      title: Media
+      description: HTML for image/media content
+    media_style:
+      type: string
+      title: Media Style
+      enum: [default, inset, exdent]
+      default: default
+    header_first:
+      type: boolean
+      title: Header First
+      description: Display header before media
+      default: false
+    flag_layout:
+      type: boolean
+      title: Flag Layout
+      description: Use horizontal flag layout
+      default: false
+    media_right:
+      type: boolean
+      title: Media Right Alignment
+      description: Right-align media in flag layout
+      default: false
+    footer:
+      type: string
+      title: Footer Content
+      description: Footer content (HTML or component)
