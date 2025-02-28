@@ -1,26 +1,11 @@
-<h2>Test Summary box</h2>
+<h2>Summary Box test</h2>
 
-{% embed "drupito_components_uswds:summary-box" with 
-{ heading: "Key information" } only %}
-	{% block item_1 %}
-		If you are under a winter storm warning,
-		<a href="#">find shelter</a>
-		right away.
-	{% endblock %}
-	{% block item_2 %}
-		Sign up for your community's warning system.
-	{% endblock %}
-	{% block item_3 %}
-		Prepare an emergency kit with essentials.
-	{% endblock %}
-	{% block item_4 %}
-		Charge your
-		<a href="#">devices</a>.
-	{% endblock %}
-	{% block item_5 %}
-		Keep your
-		<a href="#">car emergency kit</a>
-		stocked.
-	{% endblock %}
-{% endembed %}
-
+{% embed "drupito_components_uswds:summary-box" with {
+    heading: 'Key information',
+    items: [
+      { text: 'If you are under a winter storm warning, [find shelter](#) right away.' },
+      { text: 'Sign up for [your community\'s warning system](#).' },
+      { text: 'Learn the signs of, and basic treatments for, [frostbite](#) and [hypothermia](#).' },
+      { text: 'Gather emergency supplies for your [home](#) and your [car](#).' }
+    ]
+} only %}{% endembed %}
