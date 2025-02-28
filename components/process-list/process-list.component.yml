@@ -1,0 +1,52 @@
+name: Process List
+status: stable
+description: USWDS Process List Component
+libraryOverrides:
+  dependencies:
+    - drupito_components_uswds/uswds
+props:
+  type: object
+  properties:
+    items:
+      type: array
+      title: List Items
+      description: The list of steps in the process.
+      items:
+        type: object
+        required:
+          - heading
+        properties:
+          heading:
+            type: string
+            title: Step Heading
+            description: The heading for this step in the process.
+          text:
+            type: string
+            title: Step Text
+            description: 'Descriptive text for this step. Use [link text](URL) for links.'
+          custom_heading_size:
+            type: boolean
+            title: Use Custom Heading Size
+            description: If true, use a larger heading size (font-sans-xl).
+            default: false
+          custom_text_size:
+            type: boolean
+            title: Use Custom Text Size
+            description: If true, use a larger text size (font-sans-lg).
+            default: false
+          no_text:
+            type: boolean
+            title: No Text
+            description: If true, hide the descriptive text.
+            default: false
+          sub_items:
+            type: array
+            title: Sub Items
+            description: Sub-items for the current step (nested list).
+            items:
+              type: object
+              properties:
+                sub_text:
+                  type: string
+                  title: Sub-item Text
+                  description: 'Text for the sub-item. Use [link text](URL) for links.'
