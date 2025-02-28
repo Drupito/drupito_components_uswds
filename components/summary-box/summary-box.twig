@@ -1,0 +1,30 @@
+<div class="usa-summary-box" role="region" aria-labelledby="summary-box-{{ heading|clean_id }}">
+  <div class="usa-summary-box__body">
+    <h4 class="usa-summary-box__heading" id="summary-box-{{ heading|clean_id }}">
+      {{ heading }}
+    </h4>
+    <div class="usa-summary-box__text">
+      <ul class="usa-list">
+        {% for item in items %}
+          <li>
+            {% set parts = item.text|split('[') %}
+            {% for part in parts %}
+              {% if ']' in part %}
+                {% set link_parts = part|split('](') %}
+                {% set link_text = link_parts.0 %}
+                {% set link_url = link_parts.1|replace({')': ''}) %}
+                <a class="usa-summary-box__link" href="{{ link_url }}">{{ link_text }}</a>
+                {% set remaining_text = link_parts.1|split(')') %}
+                {% if remaining_text|length > 1 %}
+                    {{ remaining_text.1 }}
+                {% endif %}
+              {% else %}
+                {{ part }}
+              {% endif %}
+            {% endfor %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
