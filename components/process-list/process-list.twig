@@ -1,0 +1,62 @@
+<ol class="usa-process-list">
+  {% for item in items %}
+    <li class="usa-process-list__item {% if item.custom_heading_size or item.custom_text_size %}padding-bottom-4{% endif %}">
+      {% if item.custom_heading_size %}
+        <p class="usa-process-list__heading font-sans-xl line-height-sans-1">
+          {{ item.heading }}
+        </p>
+      {% else %}
+        <h4 class="usa-process-list__heading">
+          {{ item.heading }}
+        </h4>
+      {% endif %}
+
+      {% if not item.no_text %}
+        {% set parts = item.text|split('[') %}
+        {% if item.custom_text_size %}
+          <p class="font-sans-lg margin-top-1 text-light">
+        {% else %}
+          <p class="margin-top-05">
+        {% endif %}
+        {% for part in parts %}
+          {% if ']' in part %}
+            {% set link_parts = part|split('](') %}
+            {% set link_text = link_parts.0 %}
+            {% set link_url = link_parts.1|replace({')': ''}) %}
+            <a href="{{ link_url }}">{{ link_text }}</a>
+            {% set remaining_text = link_parts.1|split(')') %}
+            {% if remaining_text|length > 1 %}
+                {{ remaining_text.1 }}
+            {% endif %}
+          {% else %}
+            {{ part }}
+          {% endif %}
+        {% endfor %}
+        </p>
+      {% endif %}
+      {% if item.sub_items %}
+        <ul>
+          {% for sub_item in item.sub_items %}
+            <li>
+            {% set parts = sub_item.sub_text|split('[') %}
+            {% for part in parts %}
+              {% if ']' in part %}
+                {% set link_parts = part|split('](') %}
+                {% set link_text = link_parts.0 %}
+                {% set link_url = link_parts.1|replace({')': ''}) %}
+                <a href="{{ link_url }}">{{ link_text }}</a>
+                {% set remaining_text = link_parts.1|split(')') %}
+                {% if remaining_text|length > 1 %}
+                    {{ remaining_text.1 }}
+                {% endif %}
+              {% else %}
+                {{ part }}
+              {% endif %}
+            {% endfor %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ol>
