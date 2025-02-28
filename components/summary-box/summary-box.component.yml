@@ -1,0 +1,29 @@
+name: Summary Box
+status: stable
+description: USWDS Summary Box Component
+libraryOverrides:
+  dependencies:
+    - drupito_components_uswds/uswds
+props:
+  type: object
+  required:
+    - heading
+    - items
+  properties:
+    heading:
+      type: string
+      title: Heading
+      description: The heading text for the summary box.
+    items:
+      type: array
+      title: List Items
+      description: The list of items to display in the summary box.
+      items:
+        type: object
+        required:
+          - text
+        properties:
+          text:
+            type: string
+            title: Item Text
+            description: The text of the list item. Use [link text](URL) to create links.
