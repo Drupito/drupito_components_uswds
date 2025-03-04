@@ -114,16 +114,18 @@
 <h2> Segmented Button Group - Outline Inverse </h2>
 
 {# Test Case 9: Segmented Button Group (Outline Inverse) #}
+<div class="bg-base-darkest padding-1" style="max-width: fit-content;">
+  {% embed "drupito_components_uswds:button-group" with {
+    segmented: true,
+    style_variant: 'outline',
+    buttons: [
+      { button_text: 'Map', inverse: true  },
+      { button_text: 'Hybrid', inverse: true  },
+      { button_text: 'Satellite', inverse: true  }
+    ]
+  } only %}{% endembed %}
+</div>
 
-{% embed "drupito_components_uswds:button-group" with {
-  segmented: true,
-  style_variant: 'inverse',
-  buttons: [
-    { button_text: 'Map' },
-    { button_text: 'Hybrid' },
-    { button_text: 'Satellite' }
-  ]
-} only %}{% endembed %}
 
 <h2> Segmented Button Group - Secondary </h2>
 
