@@ -1,0 +1,58 @@
+
+{# Main button group classes #}
+{% set group_classes = [
+  'usa-button-group',
+  segmented ? 'usa-button-group--segmented'
+] %}
+
+<ul{{ attributes.addClass(group_classes) }}>
+  {% for button in buttons %}
+    <li class="usa-button-group__item">
+      {% set button_props = {
+        button_text: button.button_text,
+        url: button.url ?? null,
+        disabled: button.disabled ?? false,
+        
+        big: (size == 'big') ? true : button.big ?? false,
+        inverse: button.inverse ?? false 
+      } %}
+
+      {# Handle state with validation #}
+      {% if button.state is defined and button.state in ['active', 'hover'] %}
+        {% set button_props = button_props|merge({ state: button.state }) %}
+      {% endif %}
+
+      {# Handle color scheme propagation #}
+      {% if color_scheme == 'secondary' %}
+        {% set button_props = button_props|merge({ style: 'secondary' }) %}
+      {% elseif color_scheme in ['cool', 'warm'] %}
+        {% set button_props = button_props|merge({ accent: color_scheme }) %}
+      {% elseif color_scheme == 'base' %}
+        {% set button_props = button_props|merge({ style: 'base' }) %}
+      {% endif %}
+
+      {# Apply individual button overrides #}
+      {% if button.style is defined and button.style in ['unstyled', 'secondary', 'base'] %}
+        {% set button_props = button_props|merge({ style: button.style }) %}
+      {% endif %}
+      
+      {% if button.accent is defined and button.accent in ['warm', 'cool'] %}
+        {% set button_props = button_props|merge({ accent: button.accent }) %}
+      {% endif %}
+
+      {# Outline logic #}
+      {% set button_props = button_props|merge({
+        outline: button.outline ?? (style_variant == 'outline' or style_variant == 'inverse' or (color_scheme == 'default' and segmented and loop.index > 1))
+      }) %}
+
+      {% set button_attributes = create_attribute() %}
+      {% if button.focus ?? false %}
+        {% set button_attributes = button_attributes.setAttribute('data-force-focus', 'true') %}
+      {% endif %}
+
+      {# Render individual button #}
+      {% embed "drupito_components_uswds:button" with button_props|merge({ attributes: button_attributes }) only %}
+      {% endembed %}
+    </li>
+  {% endfor %}
+</ul>
