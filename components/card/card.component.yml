@@ -1,5 +1,4 @@
-# components/card/card.component.yml
-name: Card
+name: USWDS Card
 status: stable
 description: USWDS Card Component
 libraryOverrides:
