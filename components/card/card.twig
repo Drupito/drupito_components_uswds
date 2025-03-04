@@ -1,44 +1,66 @@
-{# components/card/card.twig #}
+{% set card_id = 'card-'|clean_unique_id %}
 {% set card_classes = [
   'usa-card',
+  header_first ? 'usa-card--header-first' : '',
   flag_layout ? 'usa-card--flag' : '',
   media_right and flag_layout ? 'usa-card--media-right' : '',
 ] %}
 
-{% set container_classes = [
-  'usa-card__container'
-] %}
+{% set container_classes = ['usa-card__container'] %}
 
 {% set media_classes = [
   'usa-card__media',
   media_variant != 'default' ? 'usa-card__media--' ~ media_variant : ''
 ] %}
 
-<div {{ attributes.addClass(card_classes) }}>
+<div {{ attributes.addClass(card_classes).setAttribute('id', card_id) }}>
   <div class="{{ container_classes|join(' ') }}">
+    
+    {# Capture blocks first #}
+    {% set heading_content %}{% block heading %}{% endblock %}{% endset %}
+    {% set media_content %}{% block media %}{% endblock %}{% endset %}
+    {% set body_content %}{% block body %}{% endblock %}{% endset %}
+    {% set footer_content %}{% block footer %}{% endblock %}{% endset %}
 
-    {# Header Section #}
-    <div class="usa-card__header">
-      <h{{ heading_level|default(2) }} class="usa-card__heading">
-        {% block heading %}{% endblock %}
-      </h{{ heading_level|default(2) }}>
-    </div>
-
-    {# Media Section #}
-    <div class="{{ media_classes|join(' ') }}">
-      <div class="usa-card__img">
-        {% block media %}{% endblock %}
-      </div>
-    </div>
+    {# Header/Media Ordering #}
+    {% if header_first %}
+      {# Header First #}
+      {% if heading_content|trim is not empty %}
+        <div class="usa-card__header">
+          <h{{ heading_level|default(2) }} class="usa-card__heading">
+            {{ heading_content }}
+          </h{{ heading_level|default(2) }}>
+        </div>
+      {% endif %}
+      {% if media_content|trim is not empty %}
+        <div class="{{ media_classes|join(' ') }}">
+          <div class="usa-card__img">{{ media_content }}</div>
+        </div>
+      {% endif %}
+    {% else %}
+      {# Media First #}
+      {% if media_content|trim is not empty %}
+        <div class="{{ media_classes|join(' ') }}">
+          <div class="usa-card__img">{{ media_content }}</div>
+        </div>
+      {% endif %}
+      {% if heading_content|trim is not empty %}
+        <div class="usa-card__header">
+          <h{{ heading_level|default(2) }} class="usa-card__heading">
+            {{ heading_content }}
+          </h{{ heading_level|default(2) }}>
+        </div>
+      {% endif %}
+    {% endif %}
 
     {# Body Content #}
-    <div class="usa-card__body">
-      {% block body %}{% endblock %}
-    </div>
+    {% if body_content|trim is not empty %}
+      <div class="usa-card__body">{{ body_content }}</div>
+    {% endif %}
 
-    {# Footer Section #}
-    <div class="usa-card__footer">
-      {% block footer %}{% endblock %}
-    </div>
+    {# Footer Content #}
+    {% if footer_content|trim is not empty %}
+      <div class="usa-card__footer">{{ footer_content }}</div>
+    {% endif %}
   </div>
 </div>
