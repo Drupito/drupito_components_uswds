@@ -1,42 +1,183 @@
-How to re-create the USWDS tests with this component:
-
 {# Default Collection #}
-{% embed "drupito_components_uswds:collection" with { 
-    author_name: 'By Sondra Ainsworth and Constance Lu',
-    published_date: 'September 30, 2020',
-    tag_text: "NEW",
-    is_new: true,
-} only %}
-	{% block heading_link %}<a href="https://trumpadministration.archives.performance.gov/presidents-winners-press-release/">Gears of Government President’s Award winners</a>{% endblock %}
-	{% block body %}<p>Today, the Administration announces the winners of the Gears of Government President’s Award. This program recognizes the contributions of individuals and teams across the federal workforce who make a profound difference in the lives of the American people.</p>{% endblock %}
+{% embed "drupito_components_uswds:collection" only %}
+    {% embed "drupito_components_uswds:collection_item" with { 
+        author_name: 'By Sondra Ainsworth and Constance Lu',
+        published_date: 'September 30, 2020',
+        tag_text: "NEW",
+        is_new: true
+    } only %}
+        {% block heading_link %}
+            <a href="https://trumpadministration.archives.performance.gov/presidents-winners-press-release/">
+                Gears of Government President’s Award winners
+            </a>
+        {% endblock %}
+        {% block body %}
+            <p>Today, the Administration announces the winners of the Gears of Government President’s Award...</p>
+        {% endblock %}
+    {% endembed %}
+
+    {% embed "drupito_components_uswds:collection_item" with { 
+        author_name: 'By Constance Lu',
+        published_date: 'September 30, 2020'
+    } only %}
+        {% block heading_link %}
+            <a href="https://trumpadministration.archives.performance.gov/sba-wosb-dashboard/">
+                Women-owned small business dashboard
+            </a>
+        {% endblock %}
+        {% block body %}
+            <p>We’ve partnered with SBA to highlight the Women-Owned Small Businesses (WOSBs) data dashboard!</p>
+        {% endblock %}
+    {% endembed %}
+
+    {% embed "drupito_components_uswds:collection_item" with { 
+        author_name: 'By Eric L. Miller',
+        published_date: 'September 17, 2020'
+    } only %}
+        {% block heading_link %}
+            <a href="https://trumpadministration.archives.performance.gov/September-2020-Updates-Show-Progress/">
+                September 2020 updates show progress on priority goals
+            </a>
+        {% endblock %}
+        {% block body %}
+            <p>Today, we published updates for both Cross-Agency Priority Goals and Agency Priority Goals for Q3 FY2020...</p>
+        {% endblock %}
+    {% endembed %}
 {% endembed %}
 
 {# Media Thumbnail Collection #}
-{% embed "drupito_components_uswds:collection" with { 
-    media_image_url: 'https://trumpadministration.archives.performance.gov/img/GoG/GoG-logo.png',
-    author_name: 'By Sondra Ainsworth and Constance Lu',
-    published_date: 'September 30, 2020',
-    tag_text: "NEW",
-    is_new: true,
-} only %}
-	{% block heading_link %}<a href="https://trumpadministration.archives.performance.gov/presidents-winners-press-release/">Gears of Government President’s Award winners</a>{% endblock %}
-	{% block body %}<p>Today, the Administration announces the winners of the Gears of Government President’s Award. This program recognizes the contributions of individuals and teams across the federal workforce who make a profound difference in the lives of the American people.</p>{% endblock %}
+{% embed "drupito_components_uswds:collection" only %}
+    {% embed "drupito_components_uswds:collection_item" with { 
+        media_image_url: 'https://trumpadministration.archives.performance.gov/img/GoG/GoG-logo.png',
+        image_alt: 'Gears of Government Awards - President’s Award',
+        author_name: 'By Sondra Ainsworth and Constance Lu',
+        published_date: 'September 30, 2020',
+        tag_text: "NEW",
+        is_new: true
+    } only %}
+        {% block heading_link %}
+            <a href="https://trumpadministration.archives.performance.gov/presidents-winners-press-release/">
+                Gears of Government President’s Award winners
+            </a>
+        {% endblock %}
+        {% block body %}
+            <p>The Administration announces the winners of the Gears of Government President’s Award...</p>
+        {% endblock %}
+    {% endembed %}
+
+    {% embed "drupito_components_uswds:collection_item" with { 
+        media_image_url: 'https://www.performance.gov/img/blog/wosb1.jpg',
+        image_alt: 'Woman Owned Small Business Federal Contracts',
+        author_name: 'By Constance Lu',
+        published_date: 'September 30, 2020'
+    } only %}
+        {% block heading_link %}
+            <a href="https://trumpadministration.archives.performance.gov/sba-wosb-dashboard/">
+                Women-owned small business dashboard
+            </a>
+        {% endblock %}
+        {% block body %}
+            <p>Highlighting the Women-Owned Small Businesses (WOSBs) data dashboard!</p>
+        {% endblock %}
+    {% endembed %}
+
+    {% embed "drupito_components_uswds:collection_item" with { 
+        media_image_url: 'https://www.performance.gov/img/blog/sept-2020.png',
+        image_alt: 'September 2020 Updates',
+        author_name: 'By Eric L. Miller',
+        published_date: 'September 17, 2020'
+    } only %}
+        {% block heading_link %}
+            <a href="https://trumpadministration.archives.performance.gov/September-2020-Updates-Show-Progress/">
+                September 2020 updates show progress on priority goals
+            </a>
+        {% endblock %}
+        {% block body %}
+            <p>Published updates for both Cross-Agency Priority and Agency Priority Goals for Q3 FY2020...</p>
+        {% endblock %}
+    {% endembed %}
 {% endembed %}
 
-{# Calender Display Collection #}
-{% embed "drupito_components_uswds:collection" with { 
-    calendar_month: 'SEP',
-    calendar_day: '30',
-} only %}
-	{% block heading_link %}<a href="https://trumpadministration.archives.performance.gov/presidents-winners-press-release/">Gears of Government President’s Award winners</a>{% endblock %}
-	{% block body %}<p>Today, the Administration announces the winners of the Gears of Government President’s Award. This program recognizes the contributions of individuals and teams across the federal workforce who make a profound difference in the lives of the American people.</p>{% endblock %}
+{# Calendar Display Collection #}
+{% embed "drupito_components_uswds:collection" only %}
+    {% embed "drupito_components_uswds:collection_item" with { 
+        calendar_month: 'SEP',
+        calendar_day: '30'
+    } only %}
+        {% block heading_link %}
+            <a href="https://trumpadministration.archives.performance.gov/presidents-winners-press-release/">
+                Gears of Government President’s Award winners
+            </a>
+        {% endblock %}
+        {% block body %}
+            <p>Announcing the winners of the Gears of Government President’s Award...</p>
+        {% endblock %}
+    {% endembed %}
+
+    {% embed "drupito_components_uswds:collection_item" with { 
+        calendar_month: 'SEP',
+        calendar_day: '30'
+    } only %}
+        {% block heading_link %}
+            <a href="https://trumpadministration.archives.performance.gov/sba-wosb-dashboard/">
+                Women-owned small business dashboard
+            </a>
+        {% endblock %}
+        {% block body %}
+            <p>Highlighting the WOSB data dashboard for National Women’s Small Business Month...</p>
+        {% endblock %}
+    {% endembed %}
+
+    {% embed "drupito_components_uswds:collection_item" with { 
+        calendar_month: 'SEP',
+        calendar_day: '17'
+    } only %}
+        {% block heading_link %}
+            <a href="https://trumpadministration.archives.performance.gov/September-2020-Updates-Show-Progress/">
+                September 2020 updates show progress on priority goals
+            </a>
+        {% endblock %}
+        {% block body %}
+            <p>Published updates on Cross-Agency Priority and Agency Priority Goals for Q3 FY2020...</p>
+        {% endblock %}
+    {% endembed %}
 {% endembed %}
 
 {# Headings Only Collection #}
-{% embed "drupito_components_uswds:collection" with { 
-    is_condensed: true,
-    icon: '/assets/img/sprite.svg#public',
-    icon_text: 'Performance.gov'
-} only %}
-	{% block heading_link %}<a href="https://trumpadministration.archives.performance.gov/presidents-winners-press-release/">Gears of Government President’s Award winners</a>{% endblock %}
+{% embed "drupito_components_uswds:collection" only %}
+    {% embed "drupito_components_uswds:collection_item" with { 
+        is_condensed: true,
+        icon: '/assets/img/sprite.svg#public',
+        icon_text: 'Performance.gov'
+    } only %}
+        {% block heading_link %}
+            <a href="https://trumpadministration.archives.performance.gov/presidents-winners-press-release/">
+                Gears of Government President’s Award winners
+            </a>
+        {% endblock %}
+    {% endembed %}
+
+    {% embed "drupito_components_uswds:collection_item" with { 
+        is_condensed: true,
+        icon: '/assets/img/sprite.svg#public',
+        icon_text: 'U.S. Web Design System'
+    } only %}
+        {% block heading_link %}
+            <a href="https://designsystem.digital.gov/maturity-model/">
+                The USWDS maturity model
+            </a>
+        {% endblock %}
+    {% endembed %}
+
+    {% embed "drupito_components_uswds:collection_item" with { 
+        is_condensed: true,
+        icon: '/assets/img/sprite.svg#public',
+        icon_text: '18F'
+    } only %}
+        {% block heading_link %}
+            <a href="https://18f.gsa.gov/2020/11/24/the-key-role-of-product-owners-in-federated-data-projects/">
+                The key role of product owners in federated data projects
+            </a>
+        {% endblock %}
+    {% endembed %}
 {% endembed %}
