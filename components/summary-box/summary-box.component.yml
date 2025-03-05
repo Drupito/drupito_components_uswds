@@ -1,4 +1,4 @@
-name: Summary Box
+name: USWDS Summary Box
 status: stable
 description: USWDS Summary Box Component
 libraryOverrides:
@@ -26,4 +26,4 @@ props:
           text:
             type: string
             title: Item Text
-            description: The text of the list item. Use [link text](URL) to create links.
+            description: HTML content for the list item.
