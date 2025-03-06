@@ -1,14 +1,27 @@
-<div class="usa-summary-box" role="region" aria-labelledby="summary-box-{{ heading|clean_id }}">
+{% set attributes = create_attribute() %}
+{% set attributes = attributes.addClass('usa-summary-box').setAttribute('role', 'region').setAttribute('aria-labelledby', summary_box_id) %}
+
+<div{{attributes}}>
+
   <div class="usa-summary-box__body">
-    <h4 class="usa-summary-box__heading" id="summary-box-{{ heading|clean_id }}">
+    <h4 class="usa-summary-box__heading" id="{{ summary_box_id }}">
       {{ heading }}
     </h4>
     <div class="usa-summary-box__text">
       <ul class="usa-list">
         {% for item in items %}
-          <li>{{ item.text|raw }}</li>
+          <li>
+            {# Determine the text format to use, defaulting to 'basic_html' if not provided #}
+            {% set item_text_format = text_format ?? 'basic_html' %}
+            {{ {
+              '#type': 'processed_text',
+              '#text': item.text,
+              '#format': item_text_format,
+            } }}
+          </li>
         {% endfor %}
       </ul>
     </div>
   </div>
 </div>
+{% set summary_box_id = ['summary-box', heading]|join('-')|clean_unique_id %}
