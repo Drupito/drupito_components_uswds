@@ -1,4 +1,4 @@
-{% set attributes = create_attribute() %}
+{% set attributes = attributes ?: create_attribute() %}
 {% set attributes = attributes.addClass('usa-summary-box').setAttribute('role', 'region').setAttribute('aria-labelledby', summary_box_id) %}
 
 <div{{attributes}}>
