@@ -25,5 +25,10 @@ props:
         properties:
           text:
             type: string
-            title: Item Text
-            description: HTML content for the list item.
+            title: Item Content
+            description: String for list item content
+    text_format:
+      type: string
+      title: Text Format
+      description: "Text format for item content"
+      default: 'basic_html'
