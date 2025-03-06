@@ -1,9 +1,9 @@
 How to re-create the USWDS tests with this component:
 
 {# Default Collection #}
-{% embed "drupito_components_uswds:collection" with { 
+{% embed "drupito_components_uswds:collection_item" with { 
     author_name: 'By Sondra Ainsworth and Constance Lu',
-    published_date: 'September 30, 2020',
+    published_date: '2020-09-30T12:00:00+01:00',
     tag_text: "NEW",
     is_new: true,
 } only %}
@@ -12,10 +12,10 @@ How to re-create the USWDS tests with this component:
 {% endembed %}
 
 {# Media Thumbnail Collection #}
-{% embed "drupito_components_uswds:collection" with { 
+{% embed "drupito_components_uswds:collection_item" with { 
     media_image_url: 'https://trumpadministration.archives.performance.gov/img/GoG/GoG-logo.png',
-    image_alt: 'Gears of Government Awards - President’s Award',
-    published_date: 'September 30, 2020',
+    media_image_alt: 'Gears of Government Awards - President’s Award',
+    published_date: '2020-09-30T12:00:00+01:00',
     tag_text: "NEW",
     is_new: true,
 } only %}
@@ -24,16 +24,15 @@ How to re-create the USWDS tests with this component:
 {% endembed %}
 
 {# Calender Display Collection #}
-{% embed "drupito_components_uswds:collection" with { 
-    calendar_month: 'SEP',
-    calendar_day: '30',
+{% embed "drupito_components_uswds:collection_item" with { 
+    published_date: '2020-09-30T12:00:00+01:00',
 } only %}
 	{% block heading_link %}<a href="https://trumpadministration.archives.performance.gov/presidents-winners-press-release/">Gears of Government President’s Award winners</a>{% endblock %}
 	{% block body %}<p>Today, the Administration announces the winners of the Gears of Government President’s Award. This program recognizes the contributions of individuals and teams across the federal workforce who make a profound difference in the lives of the American people.</p>{% endblock %}
 {% endembed %}
 
 {# Headings Only Collection #}
-{% embed "drupito_components_uswds:collection" with { 
+{% embed "drupito_components_uswds:collection_item" with { 
     is_condensed: true,
     icon: '/assets/img/sprite.svg#public',
     icon_text: 'Performance.gov'
