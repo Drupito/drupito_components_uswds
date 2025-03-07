@@ -1,0 +1,63 @@
+name: USWDS Card
+status: stable
+description: USWDS Card Component
+libraryOverrides:
+  dependencies:
+    - drupito_components_uswds/uswds
+props:
+  type: object
+  properties:
+    heading:
+      type: string
+      title: Card Heading
+      default: ""
+    heading_level:
+      type: integer
+      title: Heading Level
+      description: The heading level for the card title (e.g., 2 for <h2>).
+      default: 2
+    body:
+      type: string
+      title: Body Content
+      default: ""
+    media:
+      type: object
+      title: Media
+      properties:
+        uri:
+          type: string
+          format: uri-reference
+          title: Image URL
+          default: ""
+        alt:
+          type: string
+          title: Alt Text
+          default: ""
+      default: {}
+    media_variant:
+      type: string
+      title: Media Style
+      enum: [default, inset, exdent]
+      default: "default"
+    header_first:
+      type: boolean
+      title: Header First Layout
+      default: false
+    flag_layout:
+      type: boolean
+      title: Flag Layout
+      default: false
+    footer:
+      type: object
+      title: Footer
+      properties:
+        button_text:
+          type: string
+          title: Button Text
+          default: ""
+        button_url:
+          type: string
+          format: uri-reference
+          title: Button URL
+          default: ""
+      default: {}

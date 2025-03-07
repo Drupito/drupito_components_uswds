@@ -1,0 +1,49 @@
+{% set card_id = 'card-' ~ heading|clean_class ~ '-' ~ (loop.index is defined ? loop.index : random())|clean_unique_id %}
+
+{% set card_classes = [
+  'usa-card',
+  flag_layout ? 'usa-card--flag flex-1' : 'tablet-lg:grid-col-6 widescreen:grid-col-4',
+	
+  media_position == 'right' ? 'usa-card--media-right' : '',
+  header_first ? 'usa-card--header-first',
+] %}
+
+<li id="{{ card_id }}" {{ attributes.addClass(card_classes) }} role="region" aria-labelledby="{{ card_id }}-heading">
+  <div class="usa-card__container">
+    {% if header_first %}
+      <div class="usa-card__header">
+				<h{{ heading_level }} id="{{ card_id }}-heading" class="usa-card__heading">{{ heading }}</h{{ heading_level }}>
+      </div>
+    {% endif %}
+
+   {% if media.uri %}
+      <div class="usa-card__media {% if media_variant == 'inset' %}usa-card__media--inset{% endif %} {% if media_variant == 'exdent' %}usa-card__media--exdent{% endif %}">
+        <div class="usa-card__img">
+          <img src="{{ file_url(media.uri) }}" alt="{{ media.alt|default('Image description') }}">
+
+        </div>
+      </div>
+    {% endif %}
+
+    {% if not header_first %}
+      <div class="usa-card__header">
+        <h{{ heading_level }} id="{{ card_id }}-heading" class="usa-card__heading">{{ heading }}</h{{ heading_level }}>
+      </div>
+    {% endif %}
+
+    <div class="usa-card__body">
+      {{ body }}
+    </div>
+
+     {% if footer.button_text %}
+      <div class="usa-card__footer">
+        {% include 'drupito_components_uswds:button' with {
+          button_text: footer.button_text,
+          button_url: footer.button_url,
+          variant: 'default'
+        } only %}
+      </div>
+    {% endif %}
+          
+  </div>
+</li>
