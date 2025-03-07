@@ -1,0 +1,78 @@
+<h1>USWDS Card Group Test</h1>
+
+
+{% embed "drupito_components_uswds:card-group" with {
+  
+ 
+  items: [
+    {
+      heading: 'Card',
+      body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis earum tenetur quo cupiditate, eaque qui officia recusandae.',
+      footer: { button_text: 'Visit Florida Keys', button_url: '#' }
+    },
+    {
+      heading: 'Card with Media',
+      media: {
+        uri: 'https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg',
+        alt: 'A placeholder image'
+      },
+      body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis earum tenetur quo cupiditate, eaque qui officia recusandae.',
+      footer: { button_text: 'Visit Florida Keys', button_url: '#' }
+    },
+    {
+      heading: 'Media with header first',
+      header_first: true,
+      media_variant: 'exdent',
+      media: {
+        uri: 'https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg',
+        alt: 'A placeholder image'
+      },
+      body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore possimus similique nemo odit doloremque laudantium?',
+      footer: { button_text: 'Visit Florida Keys', button_url: '#' }
+    },
+    {
+      heading: 'Inset media',
+      media_variant: 'inset',
+      media: {
+        uri: 'https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg',
+        alt: 'A placeholder image'
+      },
+      body: 'Etiam vitae sodales metus. Fusce id orci dignissim, efficitur risus eget, tempus odio. Donec lectus ante, auctor eget cursus sed, convallis quis magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris mattis tellus bibendum aliquet malesuada.',
+      footer: { button_text: 'Visit Florida Keys', button_url: '#' }
+    },
+    {
+      heading: 'Exdent media',
+      media_variant: 'exdent',
+      media: {
+        uri: 'https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg',
+        alt: 'A placeholder image'
+      },
+      body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore possimus similique nemo odit doloremque laudantium?',
+      footer: { button_text: 'Visit Florida Keys', button_url: '#' }
+    },
+    {
+      heading: 'Default flag',
+      flag_layout: true,
+      media: {
+        uri: 'https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg',
+        alt: 'A placeholder image'
+      },
+      body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+      footer: { button_text: 'Visit Florida Keys', button_url: '#' }
+    },
+    {
+      heading: 'Flag media right inset',
+      flag_layout: true,
+      media_right: true,
+      media_variant: 'inset',
+      media: {
+        uri: 'https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg',
+        alt: 'A placeholder image'
+      },
+      body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+      footer: { button_text: 'Visit Florida Keys', button_url: '#' }
+    }
+  ]
+} only %}
+{% endembed %}
+
