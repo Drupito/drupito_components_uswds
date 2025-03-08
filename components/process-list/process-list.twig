@@ -1,6 +1,5 @@
 <ol class="usa-process-list">
 	{% for item in items %}
-		{% set item_text_format = text_format ?? 'basic_html' %}
 
 		{% set padding_class = (item.no_text or item.custom_heading_size) and not loop.last ? 'padding-bottom-4' : '' %}
 
