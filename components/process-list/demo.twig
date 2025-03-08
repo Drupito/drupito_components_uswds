@@ -1,90 +1,94 @@
+<h1> Process list tests</h1
+
 <h2>Default Process List</h2>
 {% embed "drupito_components_uswds:process-list" with {
   items: [
     {
       heading: 'Start a process',
-      text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque.',
-      sub_items: [
-        {sub_text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis.'},
-        {sub_text: 'Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum.'},
-        {sub_text: 'Aliquam erat volutpat. Sed quis velit.'},
-      ]
+      content: '
+        <p>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo,
+      ipsum sed pharetra gravida, orci magna rhoncus neque.
+    </p>
+    <ul>
+      <li>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo,
+        ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio
+        lorem non turpis.
+      </li>
+      <li>
+        Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat
+        condimentum.
+      </li>
+      <li>Aliquam erat volutpat. Sed quis velit.</li>
+    </ul>
+      ',
+      content_format: 'basic_html'
     },
     {
       heading: 'Proceed to the second step',
-      text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien.'
+      content: '<p>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo,
+      ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio
+      lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula
+      volutpat condimentum. Aliquam erat volutpat. Sed quis velit. Nulla
+      facilisi. Nulla libero. Vivamus pharetra posuere sapien.
+    </p>',
+      content_format: 'basic_html'
     },
     {
       heading: 'Complete the step-by-step process',
-      text: 'Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien.'
+      content: '<p>
+      Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat
+      condimentum. Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla
+      libero. Vivamus pharetra posuere sapien.
+    </p>',
+      content_format: 'basic_html'
     }
   ]
 } only %}{% endembed %}
 
-<h2>No Text and Custom Sizing</h2>
+<h2>No Text Version</h2>
 {% embed "drupito_components_uswds:process-list" with {
   items: [
-    {
-      heading: 'Start a process.',
-      custom_heading_size: true,
-      no_text: true
-    },
-    {
-      heading: 'Proceed to the second step.',
-      custom_heading_size: true,
-      no_text: true
-    },
-    {
-      heading: 'Complete the step-by-step process.',
-      custom_heading_size: true,
-      no_text: true
-    }
-  ]
-} only %}{% endembed %}
-
-<h2>Custom Sizing</h2>
-{% embed "drupito_components_uswds:process-list" with {
-  items: [
-    {
-      heading: 'Start a process.',
-      custom_heading_size: true,
-      text: 'Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum.',
-      custom_text_size: true
-    },
-    {
-      heading: 'Proceed to the second step.',
-      custom_heading_size: true,
-      text: 'Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat.',
-      custom_text_size: true
-    },
-    {
-      heading: 'Complete the step-by-step process.',
-      custom_heading_size: true,
-      text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque.',
-      custom_text_size: true
-    }
-  ]
-} only %}{% endembed %}
-
-<h2>Links in Process List</h2>
-{% embed "drupito_components_uswds:process-list" with {
-items: [
     {
       heading: 'Start a process',
-      text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque. Visit [Example Site](https://example.com) for more info.',
-      sub_items: [
-        {sub_text: 'Lorem ipsum dolor sit amet, [consectetuer adipiscing elit](https://example.net). Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis.'},
-        {sub_text: 'Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum.'},
-        {sub_text: 'Aliquam erat volutpat. Sed quis velit.'},
-      ]
+      no_text: true
     },
     {
-      heading: 'Proceed to the second step',
-      text: 'Lorem ipsum dolor sit amet, [consectetuer adipiscing elit](https://example.org). Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque.'
+      heading: 'Proceed to the second step.',
+      no_text: true
     },
     {
       heading: 'Complete the step-by-step process',
-      text: 'Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. [Final Step](https://finalstep.com).'
+      no_text: true
+    }
+  ]
+} only %}{% endembed %}
+
+<h2>Custom Heading Sizes</h2>
+{% embed "drupito_components_uswds:process-list" with {
+  items: [
+    {
+      heading: 'Start a process.',
+      custom_heading_size: true,
+      content: '<p>
+      Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum.
+    </p>',
+      content_format: 'basic_html'
+      
+    },
+    {
+      heading: 'Proceed to the second step.',
+      custom_heading_size: true,
+      content: '<p>Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat.</p>',
+      content_format: 'basic_html'
+    },
+    {
+      heading: 'Complete the step-by-step process',
+      content: '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo,
+      ipsum sed pharetra gravida, orci magna rhoncus neque.</p>',
+      custom_heading_size: true
     }
   ]
 } only %}{% endembed %}
