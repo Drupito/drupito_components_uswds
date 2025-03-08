@@ -1,4 +1,4 @@
-name: Process List
+name: USWDS Process List
 status: stable
 description: USWDS Process List Component
 libraryOverrides:
@@ -19,34 +19,36 @@ props:
           heading:
             type: string
             title: Step Heading
-            description: The heading for this step in the process.
-          text:
-            type: string
-            title: Step Text
-            description: 'Descriptive text for this step. Use [link text](URL) for links.'
-          custom_heading_size:
-            type: boolean
-            title: Use Custom Heading Size
-            description: If true, use a larger heading size (font-sans-xl).
-            default: false
-          custom_text_size:
-            type: boolean
-            title: Use Custom Text Size
-            description: If true, use a larger text size (font-sans-lg).
-            default: false
+            description: Text for the step heading
+            translatable: true
+          heading_level:
+            type: integer
+            title: Heading Level
+            description: HTML heading level (2-6)
+            minimum: 2
+            maximum: 6
+            default: 4
           no_text:
             type: boolean
-            title: No Text
-            description: If true, hide the descriptive text.
+            title: Heading Only
+            description: Remove text content area
             default: false
-          sub_items:
-            type: array
-            title: Sub Items
-            description: Sub-items for the current step (nested list).
-            items:
-              type: object
-              properties:
-                sub_text:
-                  type: string
-                  title: Sub-item Text
-                  description: 'Text for the sub-item. Use [link text](URL) for links.'
+          custom_heading_size:
+            type: boolean
+            title: Custom Heading Size
+            description: Use XL font size for heading
+            default: false
+          content:
+            type: string
+            title: Step Content
+            description: Formatted text content for the step
+            translatable: true
+          content_format:
+            type: string
+            title: Text Format
+            description: Machine name of text format to apply
+            default: "basic_html"
+            examples:
+              - basic_html
+              - full_html
+              - restricted_html
