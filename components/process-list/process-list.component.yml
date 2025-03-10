@@ -4,51 +4,7 @@ description: USWDS Process List Component
 libraryOverrides:
   dependencies:
     - drupito_components_uswds/uswds
-props:
-  type: object
-  properties:
-    items:
-      type: array
-      title: List Items
-      description: The list of steps in the process.
-      items:
-        type: object
-        required:
-          - heading
-        properties:
-          heading:
-            type: string
-            title: Step Heading
-            description: Text for the step heading
-            translatable: true
-          heading_level:
-            type: integer
-            title: Heading Level
-            description: HTML heading level (2-6)
-            minimum: 2
-            maximum: 6
-            default: 4
-          no_text:
-            type: boolean
-            title: Heading Only
-            description: Remove text content area
-            default: false
-          custom_heading_size:
-            type: boolean
-            title: Custom Heading Size
-            description: Use XL font size for heading
-            default: false
-          content:
-            type: string
-            title: Step Content
-            description: Formatted text content for the step
-            translatable: true
-          content_format:
-            type: string
-            title: Text Format
-            description: Machine name of text format to apply
-            default: "basic_html"
-            examples:
-              - basic_html
-              - full_html
-              - restricted_html
+slots:
+  items:
+    title: List of Items
+    description: The content of the list items.
