@@ -1,0 +1,33 @@
+name: USWDS Process List Item
+status: stable
+description: USWDS Process List Item Component
+libraryOverrides:
+  dependencies:
+    - drupito_components_uswds/uswds
+props:
+  type: object
+  properties:
+    heading:
+      type: string
+      title: Heading
+      description: The heading text.
+    heading_level:  
+      type: integer
+      title: Heading Level
+      default: 4  
+    heading_size: 
+      type: string
+      title: Heading Size
+      default: base
+      enum:
+        - base
+        - xl
+    title_only: 
+      type: boolean
+      title: Title List
+      description: List of titles.
+      default: false
+slots:
+  body:
+    title: Body
+    description: Content.
