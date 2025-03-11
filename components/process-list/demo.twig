@@ -1,0 +1,101 @@
+<h1> Process list tests</h1
+
+<h2>Default</h2>
+{{ include('drupito_components_uswds:process-list', {
+  items: [
+    {
+      '#type': 'component',
+      '#component': 'drupito_components_uswds:process-list-item',
+      '#props': {
+        heading: 'Step 1: Start a process',
+        body: '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque.</p><ul><li>Lorem ipsum dolor...</li><li>Nullam sit...</li><li>Aliquam erat...</li></ul>',
+      },
+    },
+    {
+      '#type': 'component',
+      '#component': 'drupito_components_uswds:process-list-item',
+      '#props': {
+        heading: 'Step 2: Proceed to the second step',
+        body: '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien.</p>',
+      },
+    },
+    {
+      '#type': 'component',
+      '#component': 'drupito_components_uswds:process-list-item',
+      '#props': {
+        heading: 'Step 3: Complete the process',
+        body: '<p>Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien.</p>',
+      },
+    },
+  ]
+} ) }}
+
+<h2>No text and custom sizing</h2>
+{{ include('drupito_components_uswds:process-list', {
+  items: [
+    {
+      '#type': 'component',
+      '#component': 'drupito_components_uswds:process-list-item',
+      '#props': {
+        heading_size: 'xl',
+        title_only: true,
+        heading: 'Step 1: Start a process',
+      },
+    },
+    {
+      '#type': 'component',
+      '#component': 'drupito_components_uswds:process-list-item',
+      '#props': {
+        heading_size: 'xl',
+        title_only: true,
+        heading: 'Step 2: Proceed',
+      },
+    },
+    {
+      '#type': 'component',
+      '#component': 'drupito_components_uswds:process-list-item',
+      '#props': {
+        heading_size: 'xl',
+        title_only: true,
+        heading: 'Step 3',
+      },
+    },
+  ]
+} ) }}
+
+<h2>Custom sizing</h2>
+
+{{ include('drupito_components_uswds:process-list', {
+  items: [
+    {    
+      '#type': 'component',
+      '#component': 'drupito_components_uswds:process-list-item',
+      '#props': {
+        heading_size: 'xl',
+        heading: 'Step 1: Start',
+        body: 'Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum.
+',
+      },
+    },
+    {
+      '#type': 'component',
+      '#component': 'drupito_components_uswds:process-list-item',
+      '#props': {
+        heading_size: 'xl',
+        heading: 'Step 2: Proceed',
+        body: ' Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum.',
+      },
+    },
+    {
+      '#type': 'component',
+      '#component': 'drupito_components_uswds:process-list-item',
+      '#props': {
+        heading_size: 'xl',
+        heading: 'Step 3',
+        body: ' Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum.',
+      },
+    },
+  ]
+} ) }}
+
+

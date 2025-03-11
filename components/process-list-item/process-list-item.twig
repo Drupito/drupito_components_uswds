@@ -1,0 +1,26 @@
+<li{{ attributes.addClass('usa-process-list__item', title_only ? 'padding-bottom-4') }}>
+  {% if heading %}
+    {% if title_only %}
+      <p class="usa-process-list__heading font-sans-xl line-height-sans-1">
+        {{ heading }}
+      </p>
+    {% else %}
+      <h{{ heading_level }} class="usa-process-list__heading {{ heading_size == 'xl' ? 'font-sans-xl line-height-sans-1' }}">
+        {{ heading }}
+      </h{{ heading_level }}>
+    {% endif %}
+  {% endif %}
+
+  {% if body and not title_only %}
+    {% set body_classes = ['margin-top-05'] %}
+    {% if heading_size == 'xl' %}
+      {% set body_classes = body_classes|merge(['font-sans-lg', 'margin-top-1', 'text-light']) %}
+    {% endif %}
+    <div class="{{ body_classes|join(' ') }}">
+       {{ body }}
+    </div>
+  {% endif %}
+</li>
+
+
+

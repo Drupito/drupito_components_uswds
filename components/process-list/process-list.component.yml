@@ -1,0 +1,10 @@
+name: USWDS Process List
+status: stable
+description: USWDS Process List Component
+libraryOverrides:
+  dependencies:
+    - drupito_components_uswds/uswds
+slots:
+  items:
+    title: List of Items
+    description: The content of the list items.
