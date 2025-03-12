@@ -7,6 +7,10 @@ libraryOverrides:
 props:
   type: object
   properties:
+    list:
+      title: List
+      description: 'Is this card part of a group of cards'
+      type: boolean
     heading:
       type: string
       title: Card Heading
@@ -18,30 +22,31 @@ props:
       default: 2
     body:
       type: string
-      title: Body Content
+      title: Card body Content
       default: ""
     media:
       type: object
-      title: Media
+      title: Card image
       properties:
         uri:
           type: string
           format: uri-reference
           title: Image URL
-          default: ""
         alt:
           type: string
           title: Alt Text
-          default: ""
-      default: {}
     media_variant:
       type: string
       title: Media Style
       enum: [default, inset, exdent]
       default: "default"
+    media_position:
+      type: string
+      enum: [left, right]
+      default: "left"
     header_first:
       type: boolean
-      title: Header First Layout
+      title: Displays the header element before the media element.
       default: false
     flag_layout:
       type: boolean
@@ -60,4 +65,3 @@ props:
           format: uri-reference
           title: Button URL
           default: ""
-      default: {}
