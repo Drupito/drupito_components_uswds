@@ -6,29 +6,12 @@ libraryOverrides:
     - drupito_components_uswds/uswds
 props:
   type: object
-  required:
-    - heading
-    - items
   properties:
     heading:
       type: string
-      title: Heading
+      title: Summary heading
       description: The heading text for the summary box.
-    items:
-      type: array
-      title: List Items
-      description: The list of items to display in the summary box.
-      items:
-        type: object
-        required:
-          - text
-        properties:
-          text:
-            type: string
-            title: Item Content
-            description: String for list item content
-    text_format:
-      type: string
-      title: Text Format
-      description: "Text format for item content"
-      default: 'basic_html'
+slots:
+  list_items:
+    title: Summary Items
+    description: Content of the summary box.
