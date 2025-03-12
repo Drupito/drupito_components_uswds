@@ -1,55 +1,10 @@
 name: USWDS Card Group
 status: stable
-description: USWDS Card Group Component
+description: Container for cards using USWDS card group pattern
 libraryOverrides:
   dependencies:
     - drupito_components_uswds/uswds
-props:
-  type: object
-  properties:
-    items:
-      type: array
-      title: Cards
-      items:
-        type: object
-        properties:
-          heading:
-            type: string
-            title: Card Heading
-            default: ""
-          body:
-            type: string
-            title: Body Content
-            default: ""
-          media:
-            type: object
-            properties:
-              uri:
-                type: string
-                format: uri-reference
-                default: ""
-              alt:
-                type: string
-                default: ""
-            default: {}
-          media_variant:
-            type: string
-            enum: [default, inset, exdent]
-            default: "default"
-          header_first:
-            type: boolean
-            default: false
-          flag_layout:
-            type: boolean
-            default: false
-          footer:
-            type: object
-            properties:
-              button_text:
-                type: string
-                default: ""
-              url:
-                type: string
-                format: uri-reference
-                default: ""
-            default: {}
+slots:
+  cards:
+    title: Cards
+    description: 'Group of cards.'
