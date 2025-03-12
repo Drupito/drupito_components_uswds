@@ -1,0 +1,12 @@
+name: USWDS Summary Box
+status: stable
+description: USWDS Summary Box Component
+libraryOverrides:
+  dependencies:
+    - drupito_components_uswds/uswds
+props:
+  type: object
+slots:
+  list_item:
+    title: Summary box item
+    description: insettem text for the summary box.
