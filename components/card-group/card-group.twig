@@ -1,15 +1,3 @@
 <ul class="usa-card-group">
-  {% for item in items %}
-      {% embed 'drupito_components_uswds:card' with {
-        heading: item.heading,
-        heading_level: item.heading_level|default(2),
-        body: item.body,
-        media: item.media ?? {},
-        media_variant: item.media_variant|default('default'),
-        header_first: item.header_first|default(false),
-        flag_layout: item.flag_layout|default(false),
-        footer: item.footer|default({})
-      } %}
-      {% endembed %}
-  {% endfor %}
+  {{ cards }}
 </ul>
