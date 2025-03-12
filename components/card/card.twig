@@ -8,18 +8,28 @@
   header_first ? 'usa-card--header-first',
 ] %}
 
-<li id="{{ card_id }}" {{ attributes.addClass(card_classes) }} role="region" aria-labelledby="{{ card_id }}-heading">
+{% set media_attributes = {
+  class: [
+    'usa-card__media',
+    media_variant == 'inset' ? 'usa-card__media--inset',
+    media_variant == 'exdent' ? 'usa-card__media--exdent',
+  ]
+} %}
+
+
+
+<{{ list ? 'li' : 'div' }} id="{{ card_id }}" {{ attributes.addClass(card_classes) }}>
   <div class="usa-card__container">
     {% if header_first %}
       <div class="usa-card__header">
-				<h{{ heading_level }} id="{{ card_id }}-heading" class="usa-card__heading">{{ heading }}</h{{ heading_level }}>
+				<h{{ heading_level|default(2) }} id="{{ card_id }}-heading" class="usa-card__heading">{{ heading }}</h{{ heading_level|default(2) }}>
       </div>
     {% endif %}
 
    {% if media.uri %}
-      <div class="usa-card__media {% if media_variant == 'inset' %}usa-card__media--inset{% endif %} {% if media_variant == 'exdent' %}usa-card__media--exdent{% endif %}">
+      <div class="{{ media_attributes.class|join(' ') }}">
         <div class="usa-card__img">
-          <img src="{{ file_url(media.uri) }}" alt="{{ media.alt|default('Image description') }}">
+          <img src="{{ media.uri }}" alt="{{ media.alt }}">
 
         </div>
       </div>
@@ -27,7 +37,7 @@
 
     {% if not header_first %}
       <div class="usa-card__header">
-        <h{{ heading_level }} id="{{ card_id }}-heading" class="usa-card__heading">{{ heading }}</h{{ heading_level }}>
+        <h{{ heading_level|default(2) }} id="{{ card_id }}-heading" class="usa-card__heading">{{ heading }}</h{{ heading_level|default(2) }}>
       </div>
     {% endif %}
 
@@ -46,4 +56,5 @@
     {% endif %}
           
   </div>
-</li>
+</{{ list ? 'li' : 'div' }}>
+
