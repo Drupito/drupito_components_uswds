@@ -1,7 +1,0 @@
-/*
- * Removes the default <li> bullet point for standalone cards.
- * (usa-card-group handles this within groups).
- */
-.usa-card {
-  list-style-type: none;
-}
