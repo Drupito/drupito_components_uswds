@@ -1,6 +1,6 @@
-name: USWDS Summary Box
+name: USWDS Summary Box Item
 status: stable
-description: USWDS Summary Box Component
+description: USWDS Summary Box Item Component
 libraryOverrides:
   dependencies:
     - drupito_components_uswds/uswds
