@@ -1,24 +1,13 @@
 {% set summary_box_id = heading|clean_unique_id %}
 
 <div {{ attributes.addClass('usa-summary-box').setAttribute('role', 'region').setAttribute('aria-labelledby', summary_box_id) }}
-
   <div class="usa-summary-box__body">
     <h4 class="usa-summary-box__heading" id="{{ summary_box_id }}">
       {{ heading }}
     </h4>
     <div class="usa-summary-box__text">
       <ul class="usa-list">
-        {% for item in items %}
-          <li>
-            {# Determine the text format to use, defaulting to 'basic_html' if not provided #}
-            {% set item_text_format = text_format ?? 'basic_html' %}
-            {{ {
-              '#type': 'processed_text',
-              '#text': item.text,
-              '#format': item_text_format,
-            } }}
-          </li>
-        {% endfor %}
+        {{ list_items }}  
       </ul>
     </div>
   </div>
