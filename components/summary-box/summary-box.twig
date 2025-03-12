@@ -1,7 +1,6 @@
 {% set summary_box_id = heading|clean_unique_id %}
 
-<div class="usa-summary-box" role="region" aria-labelledby="summary-box-{{ summary_box_id }}"
-{{ attributes }}>
+<div {{ attributes.addClass('usa-summary-box').setAttribute('role', 'region').setAttribute('aria-labelledby', summary_box_id) }}
 
   <div class="usa-summary-box__body">
     <h4 class="usa-summary-box__heading" id="{{ summary_box_id }}">
