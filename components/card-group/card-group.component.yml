@@ -1,0 +1,10 @@
+name: USWDS Card Group
+status: stable
+description: Container for cards using USWDS card group pattern
+libraryOverrides:
+  dependencies:
+    - drupito_components_uswds/uswds
+slots:
+  cards:
+    title: Cards
+    description: 'Group of cards.'
