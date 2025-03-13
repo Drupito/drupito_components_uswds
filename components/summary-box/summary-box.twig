@@ -1,7 +1,6 @@
-{% set attributes = attributes ?: create_attribute() %}
-{% set attributes = attributes.addClass('usa-summary-box').setAttribute('role', 'region').setAttribute('aria-labelledby', summary_box_id) %}
+{% set summary_box_id = heading|clean_unique_id %}
 
-<div{{attributes}}>
+<div {{ attributes.addClass('usa-summary-box').setAttribute('role', 'region').setAttribute('aria-labelledby', summary_box_id) }}
 
   <div class="usa-summary-box__body">
     <h4 class="usa-summary-box__heading" id="{{ summary_box_id }}">
@@ -24,4 +23,3 @@
     </div>
   </div>
 </div>
-{% set summary_box_id = ['summary-box', heading]|join('-')|clean_unique_id %}
