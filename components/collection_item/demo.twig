@@ -3,8 +3,8 @@ How to re-create the USWDS tests with this component:
 {# Default Collection #}
 {% embed "drupito_components_uswds:collection_item" with { 
     author_name: 'By Sondra Ainsworth and Constance Lu',
-    published_date: '2020-09-30T12:00:00+01:00',
-    tag_text: "NEW",
+    date: '2020-09-30T12:00:00+01:00',
+    tags: ["New", "PMA", "OMB"],
     is_new: true,
 } only %}
 	{% block heading_link %}<a href="https://trumpadministration.archives.performance.gov/presidents-winners-press-release/">Gears of Government President’s Award winners</a>{% endblock %}
@@ -15,8 +15,8 @@ How to re-create the USWDS tests with this component:
 {% embed "drupito_components_uswds:collection_item" with { 
     media_image_url: 'https://trumpadministration.archives.performance.gov/img/GoG/GoG-logo.png',
     media_image_alt: 'Gears of Government Awards - President’s Award',
-    published_date: '2020-09-30T12:00:00+01:00',
-    tag_text: "NEW",
+    date: '2020-09-30T12:00:00+01:00',
+    tags: ["New", "PMA", "OMB"],
     is_new: true,
 } only %}
 	{% block heading_link %}<a href="https://trumpadministration.archives.performance.gov/presidents-winners-press-release/">Gears of Government President’s Award winners</a>{% endblock %}
@@ -25,7 +25,7 @@ How to re-create the USWDS tests with this component:
 
 {# Calender Display Collection #}
 {% embed "drupito_components_uswds:collection_item" with { 
-    published_date: '2020-09-30T12:00:00+01:00',
+    date: '2020-09-30T12:00:00+01:00',
 } only %}
 	{% block heading_link %}<a href="https://trumpadministration.archives.performance.gov/presidents-winners-press-release/">Gears of Government President’s Award winners</a>{% endblock %}
 	{% block body %}<p>Today, the Administration announces the winners of the Gears of Government President’s Award. This program recognizes the contributions of individuals and teams across the federal workforce who make a profound difference in the lives of the American people.</p>{% endblock %}
