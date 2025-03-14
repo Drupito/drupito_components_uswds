@@ -7,10 +7,6 @@ libraryOverrides:
 props:
   type: object
   properties:
-    list:
-      title: List
-      description: 'Is this card part of a group of cards'
-      type: boolean
     heading:
       type: string
       title: Card Heading

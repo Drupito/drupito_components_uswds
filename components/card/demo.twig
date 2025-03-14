@@ -1,16 +1,17 @@
 <h1>Individual Card tests</h1>
-
+<h2>Card without media</h2>
+<ul class="usa-card-group">
 {% embed "drupito_components_uswds:card" with {
-  list: false,
   heading: 'Card',
   body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis earum tenetur quo cupiditate, eaque qui officia recusandae.',
   footer: { button_text: 'Visit Florida Keys', button_url: '#'}
   
  } only %}
 {% endembed %}
-
+</ul>
+<h2>Card with Media</h2>
+<ul class="usa-card-group">
 {% embed "drupito_components_uswds:card" with {
-  list: false,
   heading: 'Card with Media',
   media: {
     uri: 'https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg',
@@ -19,9 +20,28 @@
   
  } only %}
 {% endembed %}
+</ul>
 
+<h2>Media with header first</h2>
+<ul class="usa-card-group">
 {% embed "drupito_components_uswds:card" with {
-  list: false,
+  header_first: true,
+  heading: 'Media with header first',
+  media_variant: 'exdent',
+  media: {
+    uri: 'https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg',
+    alt: 'A placeholder image'
+  },
+  body: 'Etiam vitae sodales metus. Fusce id orci dignissim, efficitur risus eget, tempus odio. Donec lectus ante, auctor eget cursus sed, convallis quis magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris mattis tellus bibendum aliquet malesuada.',
+  footer: { button_text: 'Visit Florida Keys', button_url: '#' }
+ } only %}
+{% endembed %}
+</ul>
+
+
+<h2>Inset media</h2>
+<ul class="usa-card-group">
+{% embed "drupito_components_uswds:card" with {
   heading: 'Inset media',
   media_variant: 'inset',
   media: {
@@ -30,12 +50,12 @@
   },
   body: 'Etiam vitae sodales metus. Fusce id orci dignissim, efficitur risus eget, tempus odio. Donec lectus ante, auctor eget cursus sed, convallis quis magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris mattis tellus bibendum aliquet malesuada.',
   footer: { button_text: 'Visit Florida Keys', button_url: '#' }
-  
  } only %}
 {% endembed %}
-
+</ul>
+<h2>Exdent media</h2>
+<ul class="usa-card-group">
 {% embed "drupito_components_uswds:card" with {
-  list: false,
   heading: 'Exdent media',
   media_variant: 'exdent',
   media: {
@@ -44,12 +64,12 @@
   },
   body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore possimus similique nemo odit doloremque laudantium?',
   footer: { button_text: 'Visit Florida Keys', button_url: '#' }
-  
  } only %}
 {% endembed %}
-
+</ul>
+<h2>Default flag</h2>
+<ul class="usa-card-group">
 {% embed "drupito_components_uswds:card" with {
-  list: false,
   heading: 'Default flag',
   flag_layout: true,
   media: {
@@ -58,12 +78,12 @@
   },
   body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
   footer: { button_text: 'Visit Florida Keys', button_url: '#' }
-  
  } only %}
 {% endembed %}
-
+</ul>
+<h2>Flag media right inset</h2>
+<ul class="usa-card-group">
 {% embed "drupito_components_uswds:card" with {
-  list: false,
   heading: 'Flag media right inset',
   flag_layout: true,
   media_position: 'right',
@@ -74,6 +94,6 @@
   },
   body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
   footer: { button_text: 'Visit Florida Keys', button_url: '#' }
-  
  } only %}
 {% endembed %}
+</ul>
