@@ -16,7 +16,7 @@
 
 
 
-<{{ list ? 'li' : 'div' }} id="{{ card_id }}" {{ attributes.addClass(card_classes) }}>
+<li id="{{ card_id }}" {{ attributes.addClass(card_classes) }}>
   <div class="usa-card__container">
     {% if header_first %}
       <div class="usa-card__header">
@@ -54,5 +54,5 @@
     {% endif %}
           
   </div>
-</{{ list ? 'li' : 'div' }}>
+<li>
 
