@@ -5,9 +5,6 @@
   save_state ? 'remember-state'
 ] %}
 
-{# To avoid ID conflicts if there are multiple accordions on a page #}
-{% set accordion_unique_id = random(1, 1000) %}
-
 <div {{ attributes.addClass(classes).setAttribute('data-allow-multiple', multiselectable) }}>
   {#
     @TODO: Create separate accordion-item twig file or SDC
@@ -16,7 +13,7 @@
     Revisit after https://www.drupal.org/project/drupal/issues/3446933 is resolved.
   #}
   {% if item_1_heading_text %}
-    {% set item_1_id = 'item_1-' ~ accordion_unique_id %}
+    {% set item_1_id = 'item_1-' ~ item_1_heading_text|clean_unique_id %}
     <h4 class="usa-accordion__heading">
       <button
         type="button"
@@ -34,7 +31,7 @@
     </div>
   {% endif %}
   {% if item_2_heading_text %}
-    {% set item_2_id = 'item_2-' ~ accordion_unique_id %}
+    {% set item_2_id = 'item_2-' ~ item_2_heading_text|clean_unique_id %}
     <h4 class="usa-accordion__heading">
       <button
         type="button"
@@ -52,7 +49,7 @@
     </div>
   {% endif %}
   {% if item_3_heading_text %}
-    {% set item_3_id = 'item_3-' ~ accordion_unique_id %}
+    {% set item_3_id = 'item_3-' ~ item_3_heading_text|clean_unique_id %}
     <h4 class="usa-accordion__heading">
       <button
         type="button"
@@ -70,7 +67,7 @@
     </div>
   {% endif %}
   {% if item_4_heading_text %}
-    {% set item_4_id = 'item_4-' ~ accordion_unique_id %}
+    {% set item_4_id = 'item_4-' ~ item_4_heading_text|clean_unique_id %}
     <h4 class="usa-accordion__heading">
       <button
         type="button"
@@ -88,7 +85,7 @@
     </div>
   {% endif %}
   {% if item_5_heading_text %}
-    {% set item_5_id = 'item_5-' ~ accordion_unique_id %}
+    {% set item_5_id = 'item_5-' ~ item_5_heading_text|clean_unique_id %}
     <h4 class="usa-accordion__heading">
       <button
         type="button"
@@ -106,7 +103,7 @@
     </div>
   {% endif %}
   {% if item_6_heading_text %}
-    {% set item_6_id = 'item_6-' ~ accordion_unique_id %}
+    {% set item_6_id = 'item_6-' ~ item_6_heading_text|clean_unique_id %}
     <h4 class="usa-accordion__heading">
       <button
         type="button"
@@ -124,7 +121,7 @@
     </div>
   {% endif %}
   {% if item_7_heading_text %}
-    {% set item_7_id = 'item_7-' ~ accordion_unique_id %}
+    {% set item_7_id = 'item_7-' ~ item_7_heading_text|clean_unique_id %}
     <h4 class="usa-accordion__heading">
       <button
         type="button"
@@ -142,7 +139,7 @@
     </div>
   {% endif %}
   {% if item_8_heading_text %}
-    {% set item_8_id = 'item_8-' ~ accordion_unique_id %}
+    {% set item_8_id = 'item_8-' ~ item_8_heading_text|clean_unique_id %}
     <h4 class="usa-accordion__heading">
       <button
         type="button"
@@ -160,7 +157,7 @@
     </div>
   {% endif %}
   {% if item_9_heading_text %}
-    {% set item_9_id = 'item_9-' ~ accordion_unique_id %}
+    {% set item_9_id = 'item_9-' ~ item_9_heading_text|clean_unique_id %}
     <h4 class="usa-accordion__heading">
       <button
         type="button"
@@ -178,7 +175,7 @@
     </div>
   {% endif %}
   {% if item_10_heading_text %}
-    {% set item_10_id = 'item_10-' ~ accordion_unique_id %}
+    {% set item_10_id = 'item_10-' ~ item_10_heading_text|clean_unique_id %}
     <h4 class="usa-accordion__heading">
       <button
         type="button"
