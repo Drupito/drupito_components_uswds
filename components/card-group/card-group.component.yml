@@ -4,6 +4,9 @@ description: Container for cards using USWDS card group pattern
 libraryOverrides:
   dependencies:
     - drupito_components_uswds/uswds
+props:
+  type: object
+  properties: {}
 slots:
   cards:
     title: Cards
