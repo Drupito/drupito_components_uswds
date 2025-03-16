@@ -9,7 +9,6 @@ uswds-init:
 uswds:
   js:
     dist/js/uswds.min.js: {minified: true}
-    accordion/accordion.js: {}
   dependencies:
     - drupito_components_uswds/uswds-init
     - core/jquery
