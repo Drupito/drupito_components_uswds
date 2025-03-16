@@ -4,6 +4,9 @@ description: USWDS Process List Component
 libraryOverrides:
   dependencies:
     - drupito_components_uswds/uswds
+props:
+  type: object
+  properties: {}
 slots:
   items:
     title: List of Items
