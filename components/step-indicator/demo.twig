@@ -1,0 +1,71 @@
+{# Default Step Indicator #}
+{% embed "drupito_components_uswds:step_indicator" with { 
+     heading_text: 'Supporting documents',
+     steps: [
+        { label: "Personal Information", status: "complete" },
+        { label: "Household Status", status: "complete" },
+        { label: "Supporting Documents", status: "current" },
+        { label: "Signature", status: "" },
+        { label: "Review and Submit", status: "" }
+    ],
+} only %}
+{% endembed %}
+
+
+{# No labels Step Indicator #}
+{% embed "drupito_components_uswds:step_indicator" with { 
+     heading_text: 'Supporting documents',
+     style: 'no-labels',
+     steps: [
+        { label: "Personal Information", status: "complete" },
+        { label: "Household Status", status: "complete" },
+        { label: "Supporting Documents", status: "current" },
+        { label: "Signature", status: "" },
+        { label: "Review and Submit", status: "" }
+    ],
+} only %}
+{% endembed %}
+
+{# Centered Step Indicator #}
+{% embed "drupito_components_uswds:step_indicator" with { 
+     heading_text: 'Supporting documents',
+     style: 'center',
+     steps: [
+        { label: "Personal Information", status: "complete" },
+        { label: "Household Status", status: "complete" },
+        { label: "Supporting Documents", status: "current" },
+        { label: "Signature", status: "" },
+        { label: "Review and Submit", status: "" }
+    ],
+} only %}
+{% endembed %}
+
+
+{# Counters Step Indicator #}
+{% embed "drupito_components_uswds:step_indicator" with { 
+     heading_text: 'Supporting documents',
+     style: 'counters',
+     steps: [
+        { label: "Personal Information", status: "complete" },
+        { label: "Household Status", status: "complete" },
+        { label: "Supporting Documents", status: "current" },
+        { label: "Signature", status: "" },
+        { label: "Review and Submit", status: "" }
+    ],
+} only %}
+{% endembed %}
+
+
+{# Small Counters Step Indicator #}
+{% embed "drupito_components_uswds:step_indicator" with { 
+     heading_text: 'Supporting documents',
+     style: 'counters-sm',
+     steps: [
+        { label: "Personal Information", status: "complete" },
+        { label: "Household Status", status: "complete" },
+        { label: "Supporting Documents", status: "current" },
+        { label: "Signature", status: "" },
+        { label: "Review and Submit", status: "" }
+    ],
+} only %}
+{% endembed %}
