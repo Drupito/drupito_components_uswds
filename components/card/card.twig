@@ -1,58 +1,58 @@
-{% set card_classes = [
-  'usa-card',
-  flag_layout ? 'usa-card--flag flex-1' : 'tablet-lg:grid-col-6 widescreen:grid-col-4',
-	
-  media_position == 'right' ? 'usa-card--media-right' : '',
-  header_first ? 'usa-card--header-first',
-] %}
+{% do attributes.addClass('usa-card') %}
 
-{% set media_attributes = {
-  class: [
-    'usa-card__media',
-    media_variant == 'inset' ? 'usa-card__media--inset',
-    media_variant == 'exdent' ? 'usa-card__media--exdent',
-  ]
-} %}
+{% if variant == 'default' %}
+  {% do attributes.addClass('tablet-lg:grid-col-6', 'widescreen:grid-col-4') %}
+  {% if media_first %}
+    {% do attributes.addClass('usa-card--header-first') %}
+  {% endif %}
+{% elseif variant == 'flag' %}
+  {% do attributes.addClass('usa-card--flag', 'flex-1') %}
+  {% if media_position == 'right' %}
+    {% do attributes.addClass('usa-card--media-right') %}
+  {% endif %}
+{% endif %}
+{% set heading_level = heading_level|default(2) %}
 
+{# Create a new attributes object for media #}
+{% set media_attributes = create_attribute().addClass('usa-card__media') %}
 
+{# Add media style classes conditionally #}
+{% if media_style == 'inset' %}
+  {% do media_attributes.addClass('usa-card__media--inset') %}
+{% elseif media_style == 'exdent' %}
+  {% do media_attributes.addClass('usa-card__media--exdent') %}
+{% endif %}
 
-<li id="{{ card_id }}" {{ attributes.addClass(card_classes) }}>
+<li{{ attributes }}>
   <div class="usa-card__container">
-    {% if header_first %}
-      <div class="usa-card__header">
-				<h{{ heading_level|default(2) }} id="{{ card_id }}-heading" class="usa-card__heading">{{ heading }}</h{{ heading_level|default(2) }}>
-      </div>
-    {% endif %}
-
-   {% if media.uri %}
-      <div class="{{ media_attributes.class|join(' ') }}">
+    {% if media_first and image_url %}
+      <div{{ media_attributes }}>
         <div class="usa-card__img">
-          <img src="{{ media.uri }}" alt="{{ media.alt }}">
-
+          <img src="{{ image_url }}" alt="{{ image_alt }}">
         </div>
       </div>
     {% endif %}
 
-    {% if not header_first %}
-      <div class="usa-card__header">
-        <h{{ heading_level|default(2) }} id="{{ card_id }}-heading" class="usa-card__heading">{{ heading }}</h{{ heading_level|default(2) }}>
+    <div class="usa-card__header">
+      <h{{ heading_level }} class="usa-card__heading">{{ heading }}</h{{ heading_level }}>
+    </div>
+
+    {% if not media_first and image_url %}
+      <div{{ media_attributes }}>
+        <div class="usa-card__img">
+          <img src="{{ image_url }}" alt="{{ image_alt }}">
+        </div>
       </div>
     {% endif %}
 
     <div class="usa-card__body">
-      {{ body }}
+      <p>{{ body }}</p>
     </div>
 
-     {% if footer.button_text %}
+    {% if button_text or button_url %}
       <div class="usa-card__footer">
-        {% include 'drupito_components_uswds:button' with {
-          button_text: footer.button_text,
-          button_url: footer.button_url,
-          variant: 'default'
-        } only %}
+        <a href="{{ button_url }}" class="usa-button">{{ button_text }}</a>
       </div>
     {% endif %}
-          
   </div>
-<li>
-
+</li>

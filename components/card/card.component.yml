@@ -1,3 +1,4 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
 name: USWDS Card
 status: stable
 description: USWDS Card Component
@@ -7,57 +8,64 @@ libraryOverrides:
 props:
   type: object
   properties:
+    variant:
+      type: string
+      title: Card Variant
+      description: The variant of the card.
+      enum:
+        - default
+        - flag
+      default: default
     heading:
       type: string
       title: Card Heading
-      default: ""
+      description: The title of the card.
     heading_level:
-      type: integer
+      type: string
       title: Heading Level
-      description: The heading level for the card title (e.g., 2 for <h2>).
+      description: The heading level for the card title.
+      enum: [ 2, 3, 4, 5, 6]
       default: 2
     body:
       type: string
+      format: textarea
       title: Card body Content
-      default: ""
-    media:
-      type: object
-      title: Card image
-      properties:
-        uri:
-          type: string
-          format: uri-reference
-          title: Image URL
-        alt:
-          type: string
-          title: Alt Text
-    media_variant:
+      description: The content of the card body.
+    image_url:
       type: string
-      title: Media Style
-      enum: [default, inset, exdent]
-      default: "default"
+      format: uri
+      title: Image URL
+      description: The URL of the image.
+    image_alt:
+      type: string
+      title: Image Alt Text
+      description: The alternative text for the image.
     media_position:
       type: string
+      title: Media Position
+      description: 'The position of the media element.'
       enum: [left, right]
-      default: "left"
-    header_first:
+      default: left
+    media_style:
+      type: string
+      title: Media Style
+      description: Style of the media (standard, inset, or exdent).
+      enum:
+        - standard
+        - inset
+        - exdent
+      default: standard
+    media_first:
       type: boolean
-      title: Displays the header element before the media element.
-      default: false
-    flag_layout:
-      type: boolean
-      title: Flag Layout
-      default: false
-    footer:
-      type: object
-      title: Footer
-      properties:
-        button_text:
-          type: string
-          title: Button Text
-          default: ""
-        button_url:
-          type: string
-          format: uri-reference
-          title: Button URL
-          default: ""
+      title: If false, display image after the title.
+      description: 'If false, the image element will be displaid after the title.'
+      default: true
+    button_text:
+      type: string
+      title: Button Text
+      description: The text for the button.
+    button_url:
+      type: string
+      format: uri-reference
+      title: Button URL
+      description: The URL for the button.
