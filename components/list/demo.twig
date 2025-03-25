@@ -1,0 +1,40 @@
+<div class="grid-row grid-gap">
+  <!-- Unordered List -->
+  <div class="mobile-lg:grid-col-4">
+    <h3>Unordered list</h3>
+    {{ include('drupito_components_uswds:list', {
+      variant: 'unordered',
+      items: [
+        'Unordered list item 1',
+        'Unordered list item 2',
+        'Unordered list item 3'
+      ]
+    }) }}
+  </div>
+
+  <!-- Ordered List -->
+  <div class="mobile-lg:grid-col-4 margin-top-4 mobile-lg:margin-top-0">
+    <h3>Ordered list</h3>
+    {{ include('drupito_components_uswds:list', {
+      variant: 'ordered',
+      items: [
+        'Ordered list item 1',
+        'Ordered list item 2',
+        'Ordered list item 3'
+      ]
+    }) }}
+  </div>
+
+  <!-- Unstyled List -->
+  <div class="mobile-lg:grid-col-4 margin-top-4 mobile-lg:margin-top-0">
+    <h3>Unstyled list</h3>
+    {{ include('drupito_components_uswds:list', {
+      variant: 'unstyled',
+      items: [
+        'Unstyled list item 1',
+        'Unstyled list item 2',
+        'Unstyled list item 3'
+      ]
+    }) }}
+  </div>
+</div>

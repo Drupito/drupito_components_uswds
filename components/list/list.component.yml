@@ -1,0 +1,26 @@
+name: USWDS List
+status: stable
+description: USWDS List Component
+libraryOverrides:
+  dependencies:
+    - drupito_components_uswds/uswds
+props:
+  type: object
+  properties:
+    variant:
+      type: string
+      title: List Variant
+      default: unordered
+      enum:
+        - unordered
+        - ordered
+        - unstyled
+    items:
+      type: array
+      title: List Items
+      description: An array of list item contents.
+      items:
+        type: string
+      examples:
+        - ['Item 1', 'Item 2', 'Item 3']
+ 
