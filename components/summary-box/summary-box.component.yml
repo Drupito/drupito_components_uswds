@@ -21,7 +21,7 @@ props:
       items:
         type: string
         title: Item
-        description: The text for each item. Use standard HTML `<a>` tags to create links (e.g., <a href="https://your-url.here">Link Text Here</a>)
+        description:  The text for each item. Use standard HTML tags to create links.
     text_format:
       type: string
       title: Text Format
