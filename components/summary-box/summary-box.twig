@@ -9,13 +9,12 @@
     <div class="usa-summary-box__text">
       <ul class="usa-list">
         {% for item in items %}
-          <li>
-            {# Determine the text format to use, defaulting to 'basic_html' if not provided #}
-            {% set item_text_format = text_format ?? 'basic_html' %}
+        {% set text_format = 'basic_html' %}
+          <li>        
             {{ {
               '#type': 'processed_text',
-              '#text': item.text,
-              '#format': item_text_format,
+              '#text': item,
+              '#format': text_format,
             } }}
           </li>
         {% endfor %}
