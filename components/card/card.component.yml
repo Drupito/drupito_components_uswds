@@ -21,7 +21,7 @@ props:
       title: Card Heading
       description: The title of the card.
     heading_level:
-      type: string
+      type: integer
       title: Heading Level
       description: The heading level for the card title.
       enum: [ 2, 3, 4, 5, 6]
@@ -55,10 +55,10 @@ props:
         - inset
         - exdent
       default: standard
-    header_first:
+    heading_above_media:
       type: boolean
-      title: If true display header above image.
-      description: If true display header above image.
+      title: Heading Above Media
+      description: If true, positions the heading above the media element instead of below.
       default: false
     button_text:
       type: string

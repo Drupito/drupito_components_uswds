@@ -2,7 +2,7 @@
 
 {% if variant == 'default' %}
   {% set attributes = attributes.addClass('tablet-lg:grid-col-6', 'widescreen:grid-col-4') %}
-  {% if header_first %}
+  {% if heading_above_media %}
     {% set attributes = attributes.addClass('usa-card--header-first') %}
   {% endif %}
 {% endif %}
