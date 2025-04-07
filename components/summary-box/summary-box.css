@@ -1,5 +1,9 @@
-/* Selectors target <a> tags within the .usa-summary-box__text element to apply link styles without needing the .usa-summary-box__link class directly in the HTML markup. */
+ /* Override inherited 'ul' margins (like Olivero's margin-inline-start) for the list within the USWDS Summary Box component. */
+.usa-summary-box .usa-summary-box__text .usa-list {
+  margin-inline-start: 0;
+}
 
+/* Selectors target <a> tags within the .usa-summary-box__text element to apply link styles without needing the .usa-summary-box__link class directly in the HTML markup. */
 .usa-summary-box .usa-summary-box__text a {
   color: #005ea2; 
 }
