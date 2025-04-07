@@ -28,7 +28,6 @@ props:
       default: 2
     body:
       type: string
-      format: textarea
       title: Card body Content
       description: The content of the card body.
     image_url:
