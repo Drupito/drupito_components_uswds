@@ -1,0 +1,59 @@
+{% set attributes = create_attribute().addClass('usa-card') %}
+
+{% if variant == 'default' %}
+  {% set attributes = attributes.addClass('tablet-lg:grid-col-6', 'widescreen:grid-col-4') %}
+  {% if heading_above_media %}
+    {% set attributes = attributes.addClass('usa-card--header-first') %}
+  {% endif %}
+{% endif %}
+
+
+{% if variant == 'flag' %}
+    {% set attributes = attributes.addClass('usa-card--flag', 'flex-1') %}
+{% endif %}
+  {% if variant == 'flag' and media_position == 'right' %}
+     {% set attributes = attributes.addClass('usa-card--media-right') %}
+  {% endif %}
+
+
+{% set media_attributes = create_attribute().addClass('usa-card__media') %}
+{% if media_style == 'inset' %}
+  {% set media_attributes = media_attributes.addClass('usa-card__media--inset') %}
+{% endif %}
+{% if media_style == 'exdent' %}
+  {% set media_attributes = media_attributes.addClass('usa-card__media--exdent') %}
+{% endif %}
+
+
+{% set heading_level = heading_level|default(2) %}
+
+
+<li{{ attributes }}>
+  <div class="usa-card__container">
+
+      {% if heading %}
+        <div class="usa-card__header">
+          <h{{ heading_level }} class="usa-card__heading">{{ heading }}</h{{ heading_level }}>
+        </div>
+      {% endif %}
+      {% if image_url %}
+        <div{{ media_attributes }}>
+          <div class="usa-card__img">
+            <img src="{{ image_url }}" alt="{{ image_alt }}">
+          </div>
+        </div>
+      {% endif %}
+    
+    {% if body %}
+      <div class="usa-card__body">
+        {{ body }}
+      </div>
+    {% endif %}
+
+    {% if button_text or button_url %}
+      <div class="usa-card__footer">
+        <a href="{{ button_url }}" class="usa-button">{{ button_text }}</a>
+      </div>
+    {% endif %}
+  </div>
+</li>
