@@ -1,0 +1,107 @@
+{# Default Collection #}
+{% embed "drupito_components_uswds:collection" with { 
+    items: [
+        {
+            author_name: 'By Sondra Ainsworth and Constance Lu',
+            date: '2020-09-30T12:00:00+01:00',
+            tags: ["New", "PMA", "OMB"],
+            is_new: true,
+            heading_url: 'https://trumpadministration.archives.performance.gov/presidents-winners-press-release',
+            body: 'Today, the Administration announces the winners of the Gears of Government President’s Award...'
+        },
+        {
+            author_name: 'By Constance Lu',
+            date: '2020-09-30T12:00:00+01:00',
+            tags: ["SBA"],
+            heading_url: 'https://trumpadministration.archives.performance.gov/sba-wosb-dashboard',
+            body: 'We’ve partnered with SBA to highlight the Women-Owned Small Businesses (WOSBs) data dashboard!'
+        },
+        {
+            author_name: 'By Eric L. Miller',
+            date: '2020-09-30T12:00:00+01:00',
+            tags: ["Quarterly update", "CAP goal", "APG", "PMA", "Success story"],
+            heading_url: 'https://trumpadministration.archives.performance.gov/September-2020-Updates-Show-Progress',
+            body: 'Today, we published updates for both Cross-Agency Priority Goals and Agency Priority Goals for Q3 FY2020...'
+        }
+    ]
+} only %}{% endembed %}
+
+{# Media Thumbnail Collection #}
+{% embed "drupito_components_uswds:collection" with { 
+    items: [
+        {
+            media_image_url: 'https://trumpadministration.archives.performance.gov/img/GoG/GoG-logo.png',
+            media_image_alt: 'Gears of Government Awards - President’s Award',
+            author_name: 'By Sondra Ainsworth and Constance Lu',
+            date: '2020-09-30T12:00:00+01:00',
+            tags: ["New", "PMA", "OMB"],
+            is_new: true,
+            heading_url: 'https://trumpadministration.archives.performance.gov/presidents-winners-press-release',
+            body: 'The Administration announces the winners of the Gears of Government President’s Award...'
+        },
+        {
+            media_image_url: 'https://www.performance.gov/img/blog/wosb1.jpg',
+            media_image_alt: 'Woman Owned Small Business Federal Contracts',
+            author_name: 'By Constance Lu',
+            date: '2020-09-30T12:00:00+01:00',
+            tags: ["SBA"],
+            heading_url: 'https://trumpadministration.archives.performance.gov/sba-wosb-dashboard',
+            body: 'Highlighting the Women-Owned Small Businesses (WOSBs) data dashboard!'
+        },
+        {
+            media_image_url: 'https://www.performance.gov/img/blog/sept-2020.png',
+            media_image_alt: 'September 2020 Updates',
+            author_name: 'By Eric L. Miller',
+            date: '2020-09-30T12:00:00+01:00',
+            tags: ["Quarterly update", "CAP goal", "APG", "PMA", "Success story"],
+            heading_url: 'https://trumpadministration.archives.performance.gov/September-2020-Updates-Show-Progress',
+            body: 'Published updates for both Cross-Agency Priority and Agency Priority Goals for Q3 FY2020...'
+        }
+    ]
+} only %}{% endembed %}
+
+{# Calendar Display Collection #}
+{% embed "drupito_components_uswds:collection" with { 
+    items: [
+        {
+            date: '2020-09-30T12:00:00+01:00',
+            heading_url: 'https://trumpadministration.archives.performance.gov/presidents-winners-press-release',
+            body: 'Announcing the winners of the Gears of Government President’s Award...'
+        },
+        {
+            date: '2020-09-30T12:00:00+01:00',
+            calendar_day: '30',
+            heading_url: 'https://trumpadministration.archives.performance.gov/sba-wosb-dashboard',
+            body: 'Highlighting the WOSB data dashboard for National Women’s Small Business Month...'
+        },
+        {
+            date: '2020-09-30T12:00:00+01:00',
+            heading_url: 'https://trumpadministration.archives.performance.gov/September-2020-Updates-Show-Progress',
+            body: 'Published updates on Cross-Agency Priority and Agency Priority Goals for Q3 FY2020...'
+        }
+    ]
+} only %}{% endembed %}
+
+{# Headings Only Collection #}
+{% embed "drupito_components_uswds:collection" with { 
+    items: [
+        {
+            is_condensed: true,
+            icon: '/assets/img/sprite.svg#public',
+            icon_text: 'Performance.gov',
+            heading_url: 'https://trumpadministration.archives.performance.gov/presidents-winners-press-release'
+        },
+        {
+            is_condensed: true,
+            icon: '/assets/img/sprite.svg#public',
+            icon_text: 'U.S. Web Design System',
+            heading_url: 'https://designsystem.digital.gov/maturity-model'
+        },
+        {
+            is_condensed: true,
+            icon: '/assets/img/sprite.svg#public',
+            icon_text: '18F',
+            heading_url: 'https://18f.gsa.gov/2020/11/24/the-key-role-of-product-owners-in-federated-data-projects'
+        }
+    ]
+} only %}{% endembed %}
