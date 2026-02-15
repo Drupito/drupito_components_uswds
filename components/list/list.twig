@@ -1,0 +1,19 @@
+{% if variant == 'ordered' %}
+  {% set list_type = 'ol' %}
+{% else %}
+  {% set list_type = 'ul' %}
+{% endif %}
+
+{% set classes = [] %}
+{% if variant == 'unstyled' %}
+  {% set classes = classes|merge(['usa-list--unstyled']) %}
+{% endif %}
+
+<{{ list_type }}{{ attributes.addClass(classes) }}>
+{% for item in items %}
+    {% if item %}
+      <li>{{ item }}</li>
+    {% endif %}
+  {% endfor %}
+
+</{{ list_type }}>
