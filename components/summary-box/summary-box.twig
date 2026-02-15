@@ -1,4 +1,4 @@
-{% set summary_box_id = heading|clean_unique_id %}
+{% set summary_box_id = heading|default('summary-box-' ~ random()) %}
 
 <div {{ attributes.addClass('usa-summary-box').setAttribute('role', 'region').setAttribute('aria-labelledby', summary_box_id) }}
 
