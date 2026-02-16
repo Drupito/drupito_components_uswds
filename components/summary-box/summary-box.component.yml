@@ -19,14 +19,9 @@ props:
       title: List Items
       description: The list of items to display in the summary box.
       items:
-        type: object
-        required:
-          - text
-        properties:
-          text:
-            type: string
-            title: Item Content
-            description: String for list item content
+        type: string
+        title: Item
+        description:  The text for each item. Use standard HTML tags to create links.
     text_format:
       type: string
       title: Text Format
